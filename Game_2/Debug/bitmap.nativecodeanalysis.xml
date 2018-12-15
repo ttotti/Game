@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<DEFECTS>
+  <DEFECT>
+    <SFA>
+      <FILEPATH>c:\users\ttotti\documents\visual studio 2017\projects\winapi\game_2\game_2\</FILEPATH>
+      <FILENAME>bitmap.cpp</FILENAME>
+      <LINE>3</LINE>
+      <COLUMN>9</COLUMN>
+    </SFA>
+    <DEFECTCODE>26495</DEFECTCODE>
+    <DESCRIPTION>Variable 'gBitmap::x' is uninitialized. Always initialize a member variable (type.6).</DESCRIPTION>
+    <FUNCTION>gBitmap::{ctor}</FUNCTION>
+    <DECORATED>??0gBitmap@@QAE@XZ</DECORATED>
+    <FUNCLINE>3</FUNCLINE>
+    <PATH></PATH>
+  </DEFECT>
+  <DEFECT>
+    <SFA>
+      <FILEPATH>c:\users\ttotti\documents\visual studio 2017\projects\winapi\game_2\game_2\</FILEPATH>
+      <FILENAME>bitmap.cpp</FILENAME>
+      <LINE>3</LINE>
+      <COLUMN>9</COLUMN>
+    </SFA>
+    <DEFECTCODE>26495</DEFECTCODE>
+    <DESCRIPTION>Variable 'gBitmap::bmWidth' is uninitialized. Always initialize a member variable (type.6).</DESCRIPTION>
+    <FUNCTION>gBitmap::{ctor}</FUNCTION>
+    <DECORATED>??0gBitmap@@QAE@XZ</DECORATED>
+    <FUNCLINE>3</FUNCLINE>
+    <PATH></PATH>
+  </DEFECT>
+  <DEFECT>
+    <SFA>
+      <FILEPATH>c:\users\ttotti\documents\visual studio 2017\projects\winapi\game_2\game_2\</FILEPATH>
+      <FILENAME>bitmap.cpp</FILENAME>
+      <LINE>3</LINE>
+      <COLUMN>9</COLUMN>
+    </SFA>
+    <DEFECTCODE>26495</DEFECTCODE>
+    <DESCRIPTION>Variable 'gBitmap::h' is uninitialized. Always initialize a member variable (type.6).</DESCRIPTION>
+    <FUNCTION>gBitmap::{ctor}</FUNCTION>
+    <DECORATED>??0gBitmap@@QAE@XZ</DECORATED>
+    <FUNCLINE>3</FUNCLINE>
+    <PATH></PATH>
+  </DEFECT>
+  <DEFECT>
+    <SFA>
+      <FILEPATH>c:\users\ttotti\documents\visual studio 2017\projects\winapi\game_2\game_2\</FILEPATH>
+      <FILENAME>bitmap.cpp</FILENAME>
+      <LINE>3</LINE>
+      <COLUMN>9</COLUMN>
+    </SFA>
+    <DEFECTCODE>26495</DEFECTCODE>
+    <DESCRIPTION>Variable 'gBitmap::w' is uninitialized. Always initialize a member variable (type.6).</DESCRIPTION>
+    <FUNCTION>gBitmap::{ctor}</FUNCTION>
+    <DECORATED>??0gBitmap@@QAE@XZ</DECORATED>
+    <FUNCLINE>3</FUNCLINE>
+    <PATH></PATH>
+  </DEFECT>
+  <DEFECT>
+    <SFA>
+      <FILEPATH>c:\users\ttotti\documents\visual studio 2017\projects\winapi\game_2\game_2\</FILEPATH>
+      <FILENAME>bitmap.cpp</FILENAME>
+      <LINE>3</LINE>
+      <COLUMN>9</COLUMN>
+    </SFA>
+    <DEFECTCODE>26495</DEFECTCODE>
+    <DESCRIPTION>Variable 'gBitmap::y' is uninitialized. Always initialize a member variable (type.6).</DESCRIPTION>
+    <FUNCTION>gBitmap::{ctor}</FUNCTION>
+    <DECORATED>??0gBitmap@@QAE@XZ</DECORATED>
+    <FUNCLINE>3</FUNCLINE>
+    <PATH></PATH>
+  </DEFECT>
+  <DEFECT>
+    <SFA>
+      <FILEPATH>c:\users\ttotti\documents\visual studio 2017\projects\winapi\game_2\game_2\</FILEPATH>
+      <FILENAME>bitmap.cpp</FILENAME>
+      <LINE>3</LINE>
+      <COLUMN>9</COLUMN>
+    </SFA>
+    <DEFECTCODE>26495</DEFECTCODE>
+    <DESCRIPTION>Variable 'gBitmap::bmHeight' is uninitialized. Always initialize a member variable (type.6).</DESCRIPTION>
+    <FUNCTION>gBitmap::{ctor}</FUNCTION>
+    <DECORATED>??0gBitmap@@QAE@XZ</DECORATED>
+    <FUNCLINE>3</FUNCLINE>
+    <PATH></PATH>
+  </DEFECT>
+  <DEFECT>
+    <SFA>
+      <FILEPATH>c:\users\ttotti\documents\visual studio 2017\projects\winapi\game_2\game_2\</FILEPATH>
+      <FILENAME>bitmap.cpp</FILENAME>
+      <LINE>3</LINE>
+      <COLUMN>9</COLUMN>
+    </SFA>
+    <DEFECTCODE>26495</DEFECTCODE>
+    <DESCRIPTION>Variable 'gBitmap::bit' is uninitialized. Always initialize a member variable (type.6).</DESCRIPTION>
+    <FUNCTION>gBitmap::{ctor}</FUNCTION>
+    <DECORATED>??0gBitmap@@QAE@XZ</DECORATED>
+    <FUNCLINE>3</FUNCLINE>
+    <PATH></PATH>
+  </DEFECT>
+  <DEFECT>
+    <SFA>
+      <FILEPATH>c:\users\ttotti\documents\visual studio 2017\projects\winapi\game_2\game_2\</FILEPATH>
+      <FILENAME>bitmap.cpp</FILENAME>
+      <LINE>3</LINE>
+      <COLUMN>9</COLUMN>
+    </SFA>
+    <DEFECTCODE>26495</DEFECTCODE>
+    <DESCRIPTION>Variable 'gBitmap::map' is uninitialized. Always initialize a member variable (type.6).</DESCRIPTION>
+    <FUNCTION>gBitmap::{ctor}</FUNCTION>
+    <DECORATED>??0gBitmap@@QAE@XZ</DECORATED>
+    <FUNCLINE>3</FUNCLINE>
+    <PATH></PATH>
+  </DEFECT>
+</DEFECTS>

@@ -1,0 +1,199 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<DEFECTS>
+  <DEFECT>
+    <SFA>
+      <FILEPATH>c:\users\ttotti\documents\visual studio 2017\projects\winapi\game_2\game_2\</FILEPATH>
+      <FILENAME>layer.cpp</FILENAME>
+      <LINE>3</LINE>
+      <COLUMN>7</COLUMN>
+    </SFA>
+    <DEFECTCODE>26495</DEFECTCODE>
+    <DESCRIPTION>Variable 'Layer::hdc' is uninitialized. Always initialize a member variable (type.6).</DESCRIPTION>
+    <FUNCTION>Layer::{ctor}</FUNCTION>
+    <DECORATED>??0Layer@@QAE@XZ</DECORATED>
+    <FUNCLINE>3</FUNCLINE>
+    <PATH></PATH>
+  </DEFECT>
+  <DEFECT>
+    <SFA>
+      <FILEPATH>c:\users\ttotti\documents\visual studio 2017\projects\winapi\game_2\game_2\</FILEPATH>
+      <FILENAME>layer.cpp</FILENAME>
+      <LINE>3</LINE>
+      <COLUMN>7</COLUMN>
+    </SFA>
+    <DEFECTCODE>26495</DEFECTCODE>
+    <DESCRIPTION>Variable 'Layer::BackDC' is uninitialized. Always initialize a member variable (type.6).</DESCRIPTION>
+    <FUNCTION>Layer::{ctor}</FUNCTION>
+    <DECORATED>??0Layer@@QAE@XZ</DECORATED>
+    <FUNCLINE>3</FUNCLINE>
+    <PATH></PATH>
+  </DEFECT>
+  <DEFECT>
+    <SFA>
+      <FILEPATH>c:\users\ttotti\documents\visual studio 2017\projects\winapi\game_2\game_2\</FILEPATH>
+      <FILENAME>layer.cpp</FILENAME>
+      <LINE>3</LINE>
+      <COLUMN>7</COLUMN>
+    </SFA>
+    <DEFECTCODE>26495</DEFECTCODE>
+    <DESCRIPTION>Variable 'Layer::MemDC' is uninitialized. Always initialize a member variable (type.6).</DESCRIPTION>
+    <FUNCTION>Layer::{ctor}</FUNCTION>
+    <DECORATED>??0Layer@@QAE@XZ</DECORATED>
+    <FUNCLINE>3</FUNCLINE>
+    <PATH></PATH>
+  </DEFECT>
+  <DEFECT>
+    <SFA>
+      <FILEPATH>c:\users\ttotti\documents\visual studio 2017\projects\winapi\game_2\game_2\</FILEPATH>
+      <FILENAME>layer.cpp</FILENAME>
+      <LINE>3</LINE>
+      <COLUMN>7</COLUMN>
+    </SFA>
+    <DEFECTCODE>26495</DEFECTCODE>
+    <DESCRIPTION>Variable 'Layer::hWnd' is uninitialized. Always initialize a member variable (type.6).</DESCRIPTION>
+    <FUNCTION>Layer::{ctor}</FUNCTION>
+    <DECORATED>??0Layer@@QAE@XZ</DECORATED>
+    <FUNCLINE>3</FUNCLINE>
+    <PATH></PATH>
+  </DEFECT>
+  <DEFECT>
+    <SFA>
+      <FILEPATH>c:\users\ttotti\documents\visual studio 2017\projects\winapi\game_2\game_2\</FILEPATH>
+      <FILENAME>layer.cpp</FILENAME>
+      <LINE>3</LINE>
+      <COLUMN>7</COLUMN>
+    </SFA>
+    <DEFECTCODE>26495</DEFECTCODE>
+    <DESCRIPTION>Variable 'Layer::g_hInst' is uninitialized. Always initialize a member variable (type.6).</DESCRIPTION>
+    <FUNCTION>Layer::{ctor}</FUNCTION>
+    <DECORATED>??0Layer@@QAE@XZ</DECORATED>
+    <FUNCLINE>3</FUNCLINE>
+    <PATH></PATH>
+  </DEFECT>
+  <DEFECT>
+    <SFA>
+      <FILEPATH>c:\users\ttotti\documents\visual studio 2017\projects\winapi\game_2\game_2\</FILEPATH>
+      <FILENAME>layer.cpp</FILENAME>
+      <LINE>3</LINE>
+      <COLUMN>7</COLUMN>
+    </SFA>
+    <DEFECTCODE>26495</DEFECTCODE>
+    <DESCRIPTION>Variable 'Layer::b_Image' is uninitialized. Always initialize a member variable (type.6).</DESCRIPTION>
+    <FUNCTION>Layer::{ctor}</FUNCTION>
+    <DECORATED>??0Layer@@QAE@XZ</DECORATED>
+    <FUNCLINE>3</FUNCLINE>
+    <PATH></PATH>
+  </DEFECT>
+  <DEFECT>
+    <SFA>
+      <FILEPATH>c:\users\ttotti\documents\visual studio 2017\projects\winapi\game_2\game_2\</FILEPATH>
+      <FILENAME>layer.cpp</FILENAME>
+      <LINE>3</LINE>
+      <COLUMN>7</COLUMN>
+    </SFA>
+    <DEFECTCODE>26495</DEFECTCODE>
+    <DESCRIPTION>Variable 'Layer::b_BackImage' is uninitialized. Always initialize a member variable (type.6).</DESCRIPTION>
+    <FUNCTION>Layer::{ctor}</FUNCTION>
+    <DECORATED>??0Layer@@QAE@XZ</DECORATED>
+    <FUNCLINE>3</FUNCLINE>
+    <PATH></PATH>
+  </DEFECT>
+  <DEFECT>
+    <SFA>
+      <FILEPATH>c:\users\ttotti\documents\visual studio 2017\projects\winapi\game_2\game_2\</FILEPATH>
+      <FILENAME>layer.cpp</FILENAME>
+      <LINE>3</LINE>
+      <COLUMN>7</COLUMN>
+    </SFA>
+    <DEFECTCODE>26495</DEFECTCODE>
+    <DESCRIPTION>Variable 'Layer::b_hPreBit' is uninitialized. Always initialize a member variable (type.6).</DESCRIPTION>
+    <FUNCTION>Layer::{ctor}</FUNCTION>
+    <DECORATED>??0Layer@@QAE@XZ</DECORATED>
+    <FUNCLINE>3</FUNCLINE>
+    <PATH></PATH>
+  </DEFECT>
+  <DEFECT>
+    <SFA>
+      <FILEPATH>c:\users\ttotti\documents\visual studio 2017\projects\winapi\game_2\game_2\</FILEPATH>
+      <FILENAME>layer.cpp</FILENAME>
+      <LINE>8</LINE>
+      <COLUMN>7</COLUMN>
+    </SFA>
+    <DEFECTCODE>26495</DEFECTCODE>
+    <DESCRIPTION>Variable 'Layer::hdc' is uninitialized. Always initialize a member variable (type.6).</DESCRIPTION>
+    <FUNCTION>Layer::{ctor}</FUNCTION>
+    <DECORATED>??0Layer@@QAE@PAUHINSTANCE__@@PAUHWND__@@@Z</DECORATED>
+    <FUNCLINE>8</FUNCLINE>
+    <PATH></PATH>
+  </DEFECT>
+  <DEFECT>
+    <SFA>
+      <FILEPATH>c:\users\ttotti\documents\visual studio 2017\projects\winapi\game_2\game_2\</FILEPATH>
+      <FILENAME>layer.cpp</FILENAME>
+      <LINE>8</LINE>
+      <COLUMN>7</COLUMN>
+    </SFA>
+    <DEFECTCODE>26495</DEFECTCODE>
+    <DESCRIPTION>Variable 'Layer::BackDC' is uninitialized. Always initialize a member variable (type.6).</DESCRIPTION>
+    <FUNCTION>Layer::{ctor}</FUNCTION>
+    <DECORATED>??0Layer@@QAE@PAUHINSTANCE__@@PAUHWND__@@@Z</DECORATED>
+    <FUNCLINE>8</FUNCLINE>
+    <PATH></PATH>
+  </DEFECT>
+  <DEFECT>
+    <SFA>
+      <FILEPATH>c:\users\ttotti\documents\visual studio 2017\projects\winapi\game_2\game_2\</FILEPATH>
+      <FILENAME>layer.cpp</FILENAME>
+      <LINE>8</LINE>
+      <COLUMN>7</COLUMN>
+    </SFA>
+    <DEFECTCODE>26495</DEFECTCODE>
+    <DESCRIPTION>Variable 'Layer::MemDC' is uninitialized. Always initialize a member variable (type.6).</DESCRIPTION>
+    <FUNCTION>Layer::{ctor}</FUNCTION>
+    <DECORATED>??0Layer@@QAE@PAUHINSTANCE__@@PAUHWND__@@@Z</DECORATED>
+    <FUNCLINE>8</FUNCLINE>
+    <PATH></PATH>
+  </DEFECT>
+  <DEFECT>
+    <SFA>
+      <FILEPATH>c:\users\ttotti\documents\visual studio 2017\projects\winapi\game_2\game_2\</FILEPATH>
+      <FILENAME>layer.cpp</FILENAME>
+      <LINE>8</LINE>
+      <COLUMN>7</COLUMN>
+    </SFA>
+    <DEFECTCODE>26495</DEFECTCODE>
+    <DESCRIPTION>Variable 'Layer::b_Image' is uninitialized. Always initialize a member variable (type.6).</DESCRIPTION>
+    <FUNCTION>Layer::{ctor}</FUNCTION>
+    <DECORATED>??0Layer@@QAE@PAUHINSTANCE__@@PAUHWND__@@@Z</DECORATED>
+    <FUNCLINE>8</FUNCLINE>
+    <PATH></PATH>
+  </DEFECT>
+  <DEFECT>
+    <SFA>
+      <FILEPATH>c:\users\ttotti\documents\visual studio 2017\projects\winapi\game_2\game_2\</FILEPATH>
+      <FILENAME>layer.cpp</FILENAME>
+      <LINE>8</LINE>
+      <COLUMN>7</COLUMN>
+    </SFA>
+    <DEFECTCODE>26495</DEFECTCODE>
+    <DESCRIPTION>Variable 'Layer::b_BackImage' is uninitialized. Always initialize a member variable (type.6).</DESCRIPTION>
+    <FUNCTION>Layer::{ctor}</FUNCTION>
+    <DECORATED>??0Layer@@QAE@PAUHINSTANCE__@@PAUHWND__@@@Z</DECORATED>
+    <FUNCLINE>8</FUNCLINE>
+    <PATH></PATH>
+  </DEFECT>
+  <DEFECT>
+    <SFA>
+      <FILEPATH>c:\users\ttotti\documents\visual studio 2017\projects\winapi\game_2\game_2\</FILEPATH>
+      <FILENAME>layer.cpp</FILENAME>
+      <LINE>8</LINE>
+      <COLUMN>7</COLUMN>
+    </SFA>
+    <DEFECTCODE>26495</DEFECTCODE>
+    <DESCRIPTION>Variable 'Layer::b_hPreBit' is uninitialized. Always initialize a member variable (type.6).</DESCRIPTION>
+    <FUNCTION>Layer::{ctor}</FUNCTION>
+    <DECORATED>??0Layer@@QAE@PAUHINSTANCE__@@PAUHWND__@@@Z</DECORATED>
+    <FUNCLINE>8</FUNCLINE>
+    <PATH></PATH>
+  </DEFECT>
+</DEFECTS>

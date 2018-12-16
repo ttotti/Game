@@ -1,12 +1,14 @@
 #pragma once
 
 #include "MainScene.h"
+#include "GameScene.h"
 #include "macro.h"
 
 class GameLoop
 {
 public:
 	MainScene* mainscene;
+	GameScene* gamescene;
 
 public:
 	HINSTANCE g_hInst;

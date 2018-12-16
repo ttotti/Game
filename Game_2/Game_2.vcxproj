@@ -143,6 +143,7 @@
     <ClCompile Include="BackGround.cpp" />
     <ClCompile Include="Bitmap.cpp" />
     <ClCompile Include="GameLoop.cpp" />
+    <ClCompile Include="GameScene.cpp" />
     <ClCompile Include="Layer.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="MainScene.cpp" />
@@ -152,6 +153,7 @@
     <ClInclude Include="BackGround.h" />
     <ClInclude Include="Bitmap.h" />
     <ClInclude Include="GameLoop.h" />
+    <ClInclude Include="GameScene.h" />
     <ClInclude Include="Layer.h" />
     <ClInclude Include="macro.h" />
     <ClInclude Include="MainScene.h" />

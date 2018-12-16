@@ -3,5 +3,6 @@
 enum
 {
 	MAINSCENE = 1000,
-	GAMESCENE
+	GAMESCENE,
+	QUIT
 };

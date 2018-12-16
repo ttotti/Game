@@ -8,6 +8,9 @@ GameLoop::~GameLoop()
 {
 	delete mainscene;
 	mainscene = NULL;
+
+	delete gamescene;
+	gamescene = NULL;
 }
 
 void GameLoop::init(HINSTANCE g_hInst, HWND hWnd)
@@ -33,6 +36,45 @@ void GameLoop::Loop()
 		mainscene->setCilck(C_x, C_y);
 		mainscene->DrawImage();
 
+		if (mainscene->ClickMouse)
+		{
+			switch (mainscene->selectMenu)
+			{
+			case GAMESCENE:
+				selectMenu = GAMESCENE;
+
+				delete mainscene;
+				mainscene = NULL;
+
+				break;
+
+			case QUIT:
+				selectMenu = QUIT;
+
+				delete mainscene;
+				mainscene = NULL;
+
+				break;
+
+			default:
+				break;
+			}
+		}
+
+		break;
+
+	case GAMESCENE:
+		if (gamescene == NULL)
+		{
+			gamescene = new GameScene(g_hInst, hWnd);
+		}
+
+		gamescene->DrawImage();
+
+		break;
+
+	case QUIT:
+		DestroyWindow(hWnd);
 		break;
 
 	default:

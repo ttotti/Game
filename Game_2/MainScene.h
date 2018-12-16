@@ -12,6 +12,8 @@ public:
 
 public:
 	int C_x, C_y;
+	bool ClickMouse;
+	int selectMenu;
 
 public:
 	MainScene(HINSTANCE g_hInst, HWND hWnd);
@@ -19,4 +21,6 @@ public:
 
 	void setCilck(int C_x, int C_y);
 	void DrawImage();
+
+	int getSelectMenu();
 };

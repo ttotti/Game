@@ -69,6 +69,7 @@ void GameLoop::Loop()
 			gamescene = new GameScene(g_hInst, hWnd);
 		}
 
+		gamescene->Loop();
 		gamescene->DrawImage();
 
 		break;

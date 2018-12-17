@@ -147,6 +147,7 @@
     <ClCompile Include="Layer.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="MainScene.cpp" />
+    <ClCompile Include="Player.cpp" />
     <ClCompile Include="PNG_Image.cpp" />
   </ItemGroup>
   <ItemGroup>
@@ -157,6 +158,7 @@
     <ClInclude Include="Layer.h" />
     <ClInclude Include="macro.h" />
     <ClInclude Include="MainScene.h" />
+    <ClInclude Include="Player.h" />
     <ClInclude Include="PNG_Image.h" />
     <ClInclude Include="resource.h" />
   </ItemGroup>
@@ -166,6 +168,8 @@
   <ItemGroup>
     <Image Include="..\resource\background.bmp" />
     <Image Include="..\resource\mainScene.bmp" />
+    <Image Include="..\resource\Player1.bmp" />
+    <Image Include="..\resource\Player3.bmp" />
     <Image Include="..\resource\Quit_Icon.bmp" />
     <Image Include="..\resource\Start_Icon.bmp" />
   </ItemGroup>

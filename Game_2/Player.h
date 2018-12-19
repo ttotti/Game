@@ -7,7 +7,14 @@
 class Player
 {
 public:
-	int moving;
+	float moving_x;
+	float moving_y;
+
+	int Image_toggle;
+	
+private:
+	float speed_x;
+	float speed_y;
 
 public:
 	Player();
@@ -15,4 +22,7 @@ public:
 
 	int direction();
 	void setKeydown();
+
+	void setSpeed_x(float speed);
+	void setSpeed_y(float speed);
 };

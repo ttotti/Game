@@ -4,8 +4,8 @@ Player::Player()
 {
 	moving_x = 0.0f;
 	moving_y = 0.0f;
-	speed_x = 1.0f;
-	speed_y = 1.0f;
+	speed_x = 2.0f;
+	speed_y = 2.0f;
 	Image_toggle = 1;
 }
 

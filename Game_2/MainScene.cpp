@@ -11,6 +11,12 @@ MainScene::MainScene(HINSTANCE g_hInst, HWND hWnd)
 
 	QuitIcon = new gBitmap;
 	QuitIcon->SetBitmap(hWnd, g_hInst, IDB_QuitIcon);
+
+	StartIcon2 = new gBitmap;
+	StartIcon2->SetBitmap(hWnd, g_hInst, IDB_StartIcon2);
+
+	QuitIcon2 = new gBitmap;
+	QuitIcon2->SetBitmap(hWnd, g_hInst, IDB_QuitIcon2);
 }
 
 MainScene::~MainScene()
@@ -24,12 +30,20 @@ MainScene::~MainScene()
 	delete QuitIcon;
 	QuitIcon = NULL;
 
+	delete StartIcon2;
+	StartIcon = NULL;
+
+	delete QuitIcon2;
+	QuitIcon = NULL;
+
 	printf("MainScene 클래스 소멸!\n");
 	//system("pause");
 }
 
-void MainScene::setCilck(int C_x, int C_y)
+void MainScene::setMouse(int M_x, int M_y, int C_x, int C_y)
 {
+	this->M_x = M_x;
+	this->M_y = M_y;
 	this->C_x = C_x;
 	this->C_y = C_y;
 }
@@ -45,6 +59,21 @@ void MainScene::DrawImage()
 	QuitIcon->set_X((WIN_WIDTH / 2));
 	QuitIcon->set_Y((WIN_HEIGHT / 2) + 100);
 	this->Draw_BitBlt(QuitIcon);
+
+	if (M_x >= StartIcon->get_X() && M_x <= (StartIcon->get_X() + StartIcon->GetWidth()) && M_y >= StartIcon->get_Y() && M_y <= (StartIcon->get_Y() + StartIcon->GetHeight()))
+	{
+		printf("Start 버튼!\n");
+		StartIcon2->set_X((WIN_WIDTH / 2) / 2 - 50);
+		StartIcon2->set_Y((WIN_HEIGHT / 2) + 100);
+		this->Draw_BitBlt(StartIcon2);
+	}
+	else if (M_x >= QuitIcon->get_X() && M_x <= (QuitIcon->get_X() + QuitIcon->GetWidth()) && M_y >= QuitIcon->get_Y() && M_y <= (QuitIcon->get_Y() + QuitIcon->GetHeight()))
+	{
+		printf("Quit 버튼!\n");
+		QuitIcon2->set_X((WIN_WIDTH / 2));
+		QuitIcon2->set_Y((WIN_HEIGHT / 2) + 100);
+		this->Draw_BitBlt(QuitIcon2);
+	}
 
 	if (C_x >= StartIcon->get_X() && C_x <= (StartIcon->get_X() + StartIcon->GetWidth()) && C_y >= StartIcon->get_Y() && C_y <= (StartIcon->get_Y() + StartIcon->GetHeight()))
 	{

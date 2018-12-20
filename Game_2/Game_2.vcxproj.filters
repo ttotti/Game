@@ -56,9 +56,6 @@
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="resource.h">
-      <Filter>헤더 파일</Filter>
-    </ClInclude>
     <ClInclude Include="GameLoop.h">
       <Filter>소스 파일\GameLoop</Filter>
     </ClInclude>
@@ -86,11 +83,9 @@
     <ClInclude Include="Player.h">
       <Filter>소스 파일\Player</Filter>
     </ClInclude>
-  </ItemGroup>
-  <ItemGroup>
-    <ResourceCompile Include="Game_2.rc">
-      <Filter>리소스 파일</Filter>
-    </ResourceCompile>
+    <ClInclude Include="resource.h">
+      <Filter>헤더 파일</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <Image Include="..\resource\background.bmp">
@@ -111,5 +106,16 @@
     <Image Include="..\resource\Player3.bmp">
       <Filter>리소스 파일</Filter>
     </Image>
+    <Image Include="..\resource\Quit_Icon2.bmp">
+      <Filter>리소스 파일</Filter>
+    </Image>
+    <Image Include="..\resource\Start_Icon2.bmp">
+      <Filter>리소스 파일</Filter>
+    </Image>
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="Game_2.rc">
+      <Filter>리소스 파일</Filter>
+    </ResourceCompile>
   </ItemGroup>
 </Project>

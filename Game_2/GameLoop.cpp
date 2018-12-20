@@ -33,7 +33,7 @@ void GameLoop::Loop()
 			mainscene = new MainScene(g_hInst, hWnd);
 		}
 
-		mainscene->setCilck(C_x, C_y);
+		mainscene->setMouse(M_x, M_y, C_x, C_y);
 		mainscene->DrawImage();
 
 		if (mainscene->ClickMouse)

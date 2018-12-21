@@ -5,22 +5,20 @@ GameScene::GameScene()
 }
 
 GameScene::GameScene(HINSTANCE g_hInst, HWND hWnd)
-	:Layer(g_hInst, hWnd)
+	:Layer(g_hInst, hWnd), hWnd(hWnd), g_hInst(g_hInst), enemyCount(0)
 {
 	background = new gBitmap;
 	background->SetBitmap(hWnd, g_hInst, IDB_background);
 
-	playerImage[0] = new gBitmap;
-	playerImage[0]->SetBitmap(hWnd, g_hInst, IDB_Player1);
-	playerImage[0]->set_X(WIN_WIDTH / 2 - playerImage[0]->get_W() / 2);
-	playerImage[0]->set_Y(WIN_HEIGHT / 2 - playerImage[0]->get_H() / 2);
+	player = new Player(hWnd, g_hInst);
 
-	playerImage[1] = new gBitmap;
-	playerImage[1]->SetBitmap(hWnd, g_hInst, IDB_Player3);
-	playerImage[1]->set_X(WIN_WIDTH / 2 - playerImage[1]->get_W() / 2);
-	playerImage[1]->set_Y(WIN_HEIGHT / 2 - playerImage[1]->get_H() / 2);
+	background->set_X(-background->get_W() / 4 + player->moving_x);
+	background->set_Y(-background->get_H() / 4 + player->moving_y);
 
-	player = new Player;
+	for (int i = 0; i < MAX_ENEMY; i++)
+	{
+		enemy[i] = NULL;
+	}
 }
 
 GameScene::~GameScene()
@@ -28,12 +26,13 @@ GameScene::~GameScene()
 	delete background;
 	background = NULL;
 
-	for (int i = 0; i < 2; i++)
-	{
-		delete playerImage[i];
-	}
-
 	delete player;
+
+	for (int i = 0; i < MAX_ENEMY; i++)
+	{
+		if (enemy[i] != NULL)
+			delete enemy[i];
+	}
 
 	printf("gamescene Å¬·¡½º ¼Ò¸ê!\n");
 }
@@ -41,7 +40,21 @@ GameScene::~GameScene()
 void GameScene::Loop()
 {
 	player->setKeydown();
-	//player->setSpeed_x(5.0f);
+	player->setSpeed_x(15.0f);
+	player->setSpeed_y(15.0f);
+
+	if (enemyCount < MAX_ENEMY)
+	{
+		for (int i = 0; i < MAX_ENEMY; i++)
+		{
+			if (enemy[i] == NULL)
+			{
+				enemy[i] = new Enemy(hWnd, g_hInst);
+				enemy[i]->setfield_Point(rand() % Drawmap_WIDTH + 0, rand() % Drawmap_HEIGHT + 0);
+				enemyCount += 1;
+			}
+		}
+	}
 }
 
 void GameScene::DrawImage()
@@ -52,11 +65,30 @@ void GameScene::DrawImage()
 
 	if (player->Image_toggle == 1)
 	{
-		this->Draw_TransparentBlt(playerImage[0], 255, 255, 255);
+		this->Draw_TransparentBlt(player->playerImage[0], 255, 255, 255);
 	}
 	else if (player->Image_toggle == -1)
 	{
-		this->Draw_TransparentBlt(playerImage[1], 255, 255, 255);
+		this->Draw_TransparentBlt(player->playerImage[1], 255, 255, 255);
+	}
+
+	for (int i = 0; i < MAX_ENEMY; i++)
+	{
+		if (enemy[i] != NULL)
+		{
+			if (player->getfield_x() > enemy[i]->enemyImage[0]->get_X())
+			{
+				enemy[i]->enemyImage[0]->set_X(enemy[i]->getfield_x() + background->get_X());
+				enemy[i]->enemyImage[0]->set_Y(enemy[i]->getfield_y() + background->get_Y());
+				this->Draw_TransparentBlt(enemy[i]->enemyImage[0], 255, 255, 255);
+			}
+			else
+			{
+				enemy[i]->enemyImage[1]->set_X(enemy[i]->getfield_x() + background->get_X());
+				enemy[i]->enemyImage[1]->set_Y(enemy[i]->getfield_y() + background->get_Y());
+				this->Draw_TransparentBlt(enemy[i]->enemyImage[1], 255, 255, 255);
+			}
+		}
 	}
 
 	this->Draw();

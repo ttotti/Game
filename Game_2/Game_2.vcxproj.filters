@@ -42,9 +42,6 @@
     <ClCompile Include="Bitmap.cpp">
       <Filter>소스 파일\Layer</Filter>
     </ClCompile>
-    <ClCompile Include="BackGround.cpp">
-      <Filter>소스 파일\Player</Filter>
-    </ClCompile>
     <ClCompile Include="MainScene.cpp">
       <Filter>소스 파일\Scene</Filter>
     </ClCompile>
@@ -52,6 +49,9 @@
       <Filter>소스 파일\Scene</Filter>
     </ClCompile>
     <ClCompile Include="Player.cpp">
+      <Filter>소스 파일\Player</Filter>
+    </ClCompile>
+    <ClCompile Include="Enemy.cpp">
       <Filter>소스 파일\Player</Filter>
     </ClCompile>
   </ItemGroup>
@@ -68,9 +68,6 @@
     <ClInclude Include="Bitmap.h">
       <Filter>소스 파일\Layer</Filter>
     </ClInclude>
-    <ClInclude Include="BackGround.h">
-      <Filter>소스 파일\Player</Filter>
-    </ClInclude>
     <ClInclude Include="macro.h">
       <Filter>헤더 파일</Filter>
     </ClInclude>
@@ -85,6 +82,9 @@
     </ClInclude>
     <ClInclude Include="resource.h">
       <Filter>헤더 파일</Filter>
+    </ClInclude>
+    <ClInclude Include="Enemy.h">
+      <Filter>소스 파일\Player</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -110,6 +110,12 @@
       <Filter>리소스 파일</Filter>
     </Image>
     <Image Include="..\resource\Start_Icon2.bmp">
+      <Filter>리소스 파일</Filter>
+    </Image>
+    <Image Include="..\resource\Enemy1.bmp">
+      <Filter>리소스 파일</Filter>
+    </Image>
+    <Image Include="..\resource\Enemy3.bmp">
       <Filter>리소스 파일</Filter>
     </Image>
   </ItemGroup>

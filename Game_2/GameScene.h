@@ -4,14 +4,23 @@
 #include "macro.h"
 
 #include "Player.h"
+#include "Enemy.h"
+
+#define MAX_ENEMY 20
 
 class GameScene : public Layer
 {
 private:
+	HWND hWnd;
+	HINSTANCE g_hInst;
+
 	Player* player;
+	Enemy* enemy[MAX_ENEMY];
 
 	gBitmap* background;
-	gBitmap* playerImage[2];
+
+public:
+	int enemyCount;
 
 public:
 	GameScene();

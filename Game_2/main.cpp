@@ -67,6 +67,7 @@ LRESULT CALLBACK WndProc(HWND hWnd, UINT iMessage, WPARAM wParam, LPARAM lParam)
 		return 0;
 	
 	case WM_TIMER:
+		srand(GetTickCount());
 		gameloop.Loop();
 		return 0;
 

@@ -140,8 +140,8 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="BackGround.cpp" />
     <ClCompile Include="Bitmap.cpp" />
+    <ClCompile Include="Enemy.cpp" />
     <ClCompile Include="GameLoop.cpp" />
     <ClCompile Include="GameScene.cpp" />
     <ClCompile Include="Layer.cpp" />
@@ -151,8 +151,8 @@
     <ClCompile Include="PNG_Image.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="BackGround.h" />
     <ClInclude Include="Bitmap.h" />
+    <ClInclude Include="Enemy.h" />
     <ClInclude Include="GameLoop.h" />
     <ClInclude Include="GameScene.h" />
     <ClInclude Include="Layer.h" />
@@ -164,6 +164,8 @@
   </ItemGroup>
   <ItemGroup>
     <Image Include="..\resource\background.bmp" />
+    <Image Include="..\resource\Enemy1.bmp" />
+    <Image Include="..\resource\Enemy3.bmp" />
     <Image Include="..\resource\mainScene.bmp" />
     <Image Include="..\resource\Player1.bmp" />
     <Image Include="..\resource\Player3.bmp" />

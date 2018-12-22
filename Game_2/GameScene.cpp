@@ -51,6 +51,7 @@ void GameScene::Loop()
 			{
 				enemy[i] = new Enemy(hWnd, g_hInst);
 				enemy[i]->setfield_Point(rand() % Drawmap_WIDTH + 0, rand() % Drawmap_HEIGHT + 0);
+				//enemy[i]->enemyImage[0]->set_X(enemy[i]->getfield_x() + background->get_X());
 				enemyCount += 1;
 			}
 		}
@@ -76,16 +77,19 @@ void GameScene::DrawImage()
 	{
 		if (enemy[i] != NULL)
 		{
-			if (player->getfield_x() > enemy[i]->enemyImage[0]->get_X())
+
+			enemy[i]->enemyImage[0]->set_X(enemy[i]->getfield_x() + background->get_X());
+			enemy[i]->enemyImage[0]->set_Y(enemy[i]->getfield_y() + background->get_Y());
+
+			enemy[i]->enemyImage[1]->set_X(enemy[i]->enemyImage[0]->get_X());
+			enemy[i]->enemyImage[1]->set_Y(enemy[i]->enemyImage[0]->get_Y());
+
+			if (player->playerImage[0]->get_X() > enemy[i]->enemyImage[0]->get_X())
 			{
-				enemy[i]->enemyImage[0]->set_X(enemy[i]->getfield_x() + background->get_X());
-				enemy[i]->enemyImage[0]->set_Y(enemy[i]->getfield_y() + background->get_Y());
 				this->Draw_TransparentBlt(enemy[i]->enemyImage[0], 255, 255, 255);
 			}
 			else
 			{
-				enemy[i]->enemyImage[1]->set_X(enemy[i]->getfield_x() + background->get_X());
-				enemy[i]->enemyImage[1]->set_Y(enemy[i]->getfield_y() + background->get_Y());
 				this->Draw_TransparentBlt(enemy[i]->enemyImage[1], 255, 255, 255);
 			}
 		}

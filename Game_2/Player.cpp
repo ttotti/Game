@@ -33,11 +33,6 @@ Player::~Player()
 	printf("Player 소멸!\n");
 }
 
-int Player::direction()
-{
-	return 0; //moving;
-}
-
 void Player::setKeydown()
 {
 	//printf("setKeydown() 호출!\n");
@@ -48,51 +43,31 @@ void Player::setKeydown()
 	if (GetAsyncKeyState(VK_LEFT))
 	{
 		moving_x += speed_x;
-		field_x += speed_x;
+		field_x -= speed_x;
 		Image_toggle = -1;
 
-		printf("field = %f\n", field_x);
+		//printf("field = %f\n", field_x);
 	}
 	if (GetAsyncKeyState(VK_RIGHT))
 	{
 		moving_x -= speed_x;
-		field_x -= speed_x;
+		field_x += speed_x;
 		Image_toggle = 1;
 
-		printf("field = %f\n", field_x);
+		//printf("field = %f\n", field_x);
 	}
 	if (GetAsyncKeyState(VK_UP))
 	{
 		moving_y += speed_y;
-		field_y += moving_y;
+		field_y -= speed_y;
 
 		//printf("UP 입력!\n");
 	}
 	if (GetAsyncKeyState(VK_DOWN))
 	{
 		moving_y -= speed_y;
-		field_y -= moving_y;
+		field_y += speed_y;
 
 		//printf("DOWN 입력!\n");
 	}
-}
-
-void Player::setSpeed_x(float speed)
-{
-	speed_x = speed;
-}
-
-void Player::setSpeed_y(float speed)
-{
-	speed_y = speed;
-}
-
-float Player::getfield_x()
-{
-	return field_x;
-}
-
-float Player::getfield_y()
-{
-	return field_y;
 }

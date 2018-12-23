@@ -40,14 +40,6 @@ MainScene::~MainScene()
 	//system("pause");
 }
 
-void MainScene::setMouse(int M_x, int M_y, int C_x, int C_y)
-{
-	this->M_x = M_x;
-	this->M_y = M_y;
-	this->C_x = C_x;
-	this->C_y = C_y;
-}
-
 void MainScene::DrawImage()
 {
 	this->Draw_BitBlt(mainScene);
@@ -89,9 +81,4 @@ void MainScene::DrawImage()
 	}
 
 	this->Draw();
-}
-
-int MainScene::getSelectMenu()
-{
-	return selectMenu;
 }

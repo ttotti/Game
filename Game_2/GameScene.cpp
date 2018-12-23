@@ -15,6 +15,9 @@ GameScene::GameScene(HINSTANCE g_hInst, HWND hWnd)
 	background->set_X(-background->get_W() / 4 + player->moving_x);
 	background->set_Y(-background->get_H() / 4 + player->moving_y);
 
+	player->setfield_x(player->getfield_x() - background->get_X());
+	player->setfield_y(player->getfield_y() - background->get_Y());
+
 	for (int i = 0; i < MAX_ENEMY; i++)
 	{
 		enemy[i] = NULL;
@@ -56,6 +59,39 @@ void GameScene::Loop()
 			}
 		}
 	}
+
+	for (int i = 0; i < MAX_ENEMY; i++)
+	{
+		if (player->getfield_x() != enemy[i]->getfield_x() || player->getfield_y() != enemy[i]->getfield_y())
+		{
+			//printf("player->getfield_x = %f\n", player->getfield_x());
+			//printf("player->getfield_y = %f\n\n", player->getfield_y());
+			//printf("enemy->getfield_x = %f\n", enemy[0]->getfield_x());
+			//printf("enemy->getfield_y = %f\n\n", enemy[0]->getfield_y());
+			if (player->getfield_x() > enemy[i]->getfield_x())
+			{
+				enemy[i]->setfield_x(enemy[i]->getfield_x() + enemy[i]->moving_x);
+			}
+
+			if (player->getfield_y() > enemy[i]->getfield_y())
+			{
+				enemy[i]->setfield_y(enemy[i]->getfield_y() + enemy[i]->moving_y);
+			}
+
+			if (player->getfield_x() < enemy[i]->getfield_x())
+			{
+				enemy[i]->setfield_x(enemy[i]->getfield_x() - enemy[i]->moving_x);
+			}
+
+			if (player->getfield_y() < enemy[i]->getfield_y())
+			{
+				enemy[i]->setfield_y(enemy[i]->getfield_y() - enemy[i]->moving_y);
+			}
+
+	/*		enemy[i]->setfield_x(enemy[i]->getfield_x() + enemy[i]->moving_x);
+			enemy[i]->setfield_y(enemy[i]->getfield_y() + enemy[i]->moving_y);*/
+		}
+	}
 }
 
 void GameScene::DrawImage()
@@ -77,7 +113,6 @@ void GameScene::DrawImage()
 	{
 		if (enemy[i] != NULL)
 		{
-
 			enemy[i]->enemyImage[0]->set_X(enemy[i]->getfield_x() + background->get_X());
 			enemy[i]->enemyImage[0]->set_Y(enemy[i]->getfield_y() + background->get_Y());
 

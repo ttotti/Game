@@ -118,6 +118,12 @@
     <Image Include="..\resource\Enemy3.bmp">
       <Filter>리소스 파일</Filter>
     </Image>
+    <Image Include="..\resource\HP.bmp">
+      <Filter>리소스 파일</Filter>
+    </Image>
+    <Image Include="..\resource\HPbar.bmp">
+      <Filter>리소스 파일</Filter>
+    </Image>
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="Game_2.rc">

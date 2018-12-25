@@ -6,7 +6,7 @@
 #include "Player.h"
 #include "Enemy.h"
 
-#define MAX_ENEMY 500
+#define MAX_ENEMY 3
 
 class GameScene : public Layer
 {

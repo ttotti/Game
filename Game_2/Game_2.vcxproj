@@ -166,6 +166,8 @@
     <Image Include="..\resource\background.bmp" />
     <Image Include="..\resource\Enemy1.bmp" />
     <Image Include="..\resource\Enemy3.bmp" />
+    <Image Include="..\resource\HP.bmp" />
+    <Image Include="..\resource\HPbar.bmp" />
     <Image Include="..\resource\mainScene.bmp" />
     <Image Include="..\resource\Player1.bmp" />
     <Image Include="..\resource\Player3.bmp" />

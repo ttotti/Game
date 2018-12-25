@@ -8,6 +8,8 @@ class Player
 {
 public:
 	gBitmap* playerImage[2];
+	gBitmap* HPbar;
+	gBitmap* HP;
 
 public:
 	float moving_x;

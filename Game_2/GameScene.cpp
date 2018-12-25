@@ -54,20 +54,25 @@ void GameScene::Loop()
 			{
 				enemy[i] = new Enemy(hWnd, g_hInst);
 				enemy[i]->setfield_Point(rand() % Drawmap_WIDTH + 0, rand() % Drawmap_HEIGHT + 0);
-				//enemy[i]->enemyImage[0]->set_X(enemy[i]->getfield_x() + background->get_X());
 				enemyCount += 1;
 			}
 		}
 	}
 
-	for (int i = 0; i < MAX_ENEMY; i++)
+	for (int i = 0; i < enemyCount; i++)
 	{
+		if (enemy[i] == NULL)
+		{
+			printf("enemy[%d] 가 NULL 값입니다!", i);
+			printf("pause");
+		}
+
 		if (player->getfield_x() != enemy[i]->getfield_x() || player->getfield_y() != enemy[i]->getfield_y())
 		{
-			//printf("player->getfield_x = %f\n", player->getfield_x());
-			//printf("player->getfield_y = %f\n\n", player->getfield_y());
-			//printf("enemy->getfield_x = %f\n", enemy[0]->getfield_x());
-			//printf("enemy->getfield_y = %f\n\n", enemy[0]->getfield_y());
+			printf("player->getfield_x = %f\n", player->getfield_x());
+			printf("player->getfield_y = %f\n\n", player->getfield_y());
+			printf("enemy->getfield_x = %f\n", enemy[0]->getfield_x());
+			printf("enemy->getfield_y = %f\n\n", enemy[0]->getfield_y());
 			if (player->getfield_x() > enemy[i]->getfield_x())
 			{
 				enemy[i]->setfield_x(enemy[i]->getfield_x() + enemy[i]->moving_x);
@@ -91,6 +96,13 @@ void GameScene::Loop()
 	/*		enemy[i]->setfield_x(enemy[i]->getfield_x() + enemy[i]->moving_x);
 			enemy[i]->setfield_y(enemy[i]->getfield_y() + enemy[i]->moving_y);*/
 		}
+
+		if (player->getfield_x() == enemy[i]->getfield_x() && player->getfield_y() == enemy[i]->getfield_y())
+		{
+			delete enemy[i];
+			enemy[i] = NULL;
+			enemyCount -= 1;
+		}
 	}
 }
 
@@ -99,6 +111,9 @@ void GameScene::DrawImage()
 	background->set_X(-background->get_W() / 4 + player->moving_x);
 	background->set_Y(-background->get_H() / 4 + player->moving_y);
 	this->Draw_BitBlt(background);
+
+	this->Draw_BitBlt(player->HP);
+	this->Draw_TransparentBlt(player->HPbar, 255, 255, 255);
 
 	if (player->Image_toggle == 1)
 	{
@@ -109,7 +124,7 @@ void GameScene::DrawImage()
 		this->Draw_TransparentBlt(player->playerImage[1], 255, 255, 255);
 	}
 
-	for (int i = 0; i < MAX_ENEMY; i++)
+	for (int i = 0; i < enemyCount; i++)
 	{
 		if (enemy[i] != NULL)
 		{

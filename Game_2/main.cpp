@@ -51,6 +51,21 @@ void MyText(HDC hdc, int x, int y, LPCTSTR Text)
 
 GameLoop gameloop;
 
+void CALLBACK TimeProc(HWND hWnd, UINT uMsg, UINT idEvent, DWORD dwTime)
+{
+	switch (uMsg)
+	{
+	case WM_TIMER:
+		srand(GetTickCount());
+		gameloop.Loop();
+
+		break;
+
+	default:
+		break;
+	}
+}
+
 // 사용자와 시스템이 보내오는 메시지를 처리하는 아주 중요한 일을 한다
 LRESULT CALLBACK WndProc(HWND hWnd, UINT iMessage, WPARAM wParam, LPARAM lParam)
 {
@@ -61,14 +76,9 @@ LRESULT CALLBACK WndProc(HWND hWnd, UINT iMessage, WPARAM wParam, LPARAM lParam)
 	{
 	case WM_CREATE:
 		hWndMain = hWnd;
-		SetTimer(hWnd, 1, 10, NULL);
+		SetTimer(hWnd, 1, 10, TimeProc);
 
 		gameloop.init(g_hInst, hWnd);
-		return 0;
-	
-	case WM_TIMER:
-		srand(GetTickCount());
-		gameloop.Loop();
 		return 0;
 
 	case WM_MOUSEMOVE:

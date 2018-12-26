@@ -29,4 +29,5 @@ public:
 
 	void Loop();
 	void DrawImage();
+	//bool collision(auto )
 };

@@ -59,20 +59,15 @@ void GameScene::Loop()
 		}
 	}
 
-	for (int i = 0; i < enemyCount; i++)
+	for (int i = 0; i < MAX_ENEMY; i++)
 	{
-		if (enemy[i] == NULL)
-		{
-			printf("enemy[%d] 가 NULL 값입니다!", i);
-			printf("pause");
-		}
-
 		if (player->getfield_x() != enemy[i]->getfield_x() || player->getfield_y() != enemy[i]->getfield_y())
 		{
-			printf("player->getfield_x = %f\n", player->getfield_x());
-			printf("player->getfield_y = %f\n\n", player->getfield_y());
-			printf("enemy->getfield_x = %f\n", enemy[0]->getfield_x());
-			printf("enemy->getfield_y = %f\n\n", enemy[0]->getfield_y());
+		//	printf("player->getfield_x = %f\n", player->getfield_x());
+		//	printf("player->getfield_y = %f\n\n", player->getfield_y());
+		//	printf("enemy->getfield_x = %f\n", enemy[0]->getfield_x());
+		    //printf("enemy->getfield_y = %f\n\n", enemy[0]->getfield_y());
+
 			if (player->getfield_x() > enemy[i]->getfield_x())
 			{
 				enemy[i]->setfield_x(enemy[i]->getfield_x() + enemy[i]->moving_x);

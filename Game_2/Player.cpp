@@ -32,6 +32,8 @@ Player::Player(HWND hWnd, HINSTANCE g_hInst)
 
 	field_x = playerImage[0]->get_X();
 	field_y = playerImage[0]->get_Y();
+	field_w = field_x + playerImage[0]->get_W();
+	field_h = field_y + playerImage[0]->get_H();
 }
 
 Player::~Player()
@@ -59,7 +61,7 @@ void Player::setKeydown()
 	{
 		moving_x += speed_x;
 		field_x -= speed_x;
-		Image_toggle = -1;
+		Image_toggle = 1;
 
 		//printf("field = %f\n", field_x);
 	}
@@ -67,7 +69,7 @@ void Player::setKeydown()
 	{
 		moving_x -= speed_x;
 		field_x += speed_x;
-		Image_toggle = 1;
+		Image_toggle = 0;
 
 		//printf("field = %f\n", field_x);
 	}
@@ -85,4 +87,7 @@ void Player::setKeydown()
 
 		//printf("DOWN ют╥б!\n");
 	}
+
+	field_w = field_x + 50;
+	field_h = field_y + 50;
 }

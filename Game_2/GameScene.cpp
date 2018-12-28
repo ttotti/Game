@@ -61,6 +61,15 @@ void GameScene::Loop()
 
 	for (int i = 0; i < MAX_ENEMY; i++)
 	{
+		if (player->playerImage[player->Image_toggle]->get_X() > enemy[i]->enemyImage[enemy[i]->Image_toggle]->get_X())
+		{
+			enemy[i]->Image_toggle = 0;
+		}
+		else
+		{
+			enemy[i]->Image_toggle = 1;
+		}
+
 		if (player->getfield_x() != enemy[i]->getfield_x() || player->getfield_y() != enemy[i]->getfield_y())
 		{
 		//	printf("player->getfield_x = %f\n", player->getfield_x());
@@ -88,16 +97,29 @@ void GameScene::Loop()
 				enemy[i]->setfield_y(enemy[i]->getfield_y() - enemy[i]->moving_y);
 			}
 
-	/*		enemy[i]->setfield_x(enemy[i]->getfield_x() + enemy[i]->moving_x);
-			enemy[i]->setfield_y(enemy[i]->getfield_y() + enemy[i]->moving_y);*/
+			enemy[i]->setfield_w(enemy[i]->getfield_x() + 50);
+			enemy[i]->setfield_h(enemy[i]->getfield_y() + 50);
 		}
 
-		if (player->getfield_x() == enemy[i]->getfield_x() && player->getfield_y() == enemy[i]->getfield_y())
+		if (player->getfield_x() <= enemy[i]->getfield_x() &&
+			player->getfield_w() >= enemy[i]->getfield_x() &&
+			player->getfield_y() <= enemy[i]->getfield_y() &&
+			player->getfield_h() >= enemy[i]->getfield_y())
 		{
 			delete enemy[i];
 			enemy[i] = NULL;
 			enemyCount -= 1;
 		}
+
+
+		//if (player->getfield_x() == enemy[i]->getfield_x() 
+		//	&& player->getfield_x()+50
+		//	&& player->getfield_y() == enemy[i]->getfield_y())
+		//{
+		//	delete enemy[i];
+		//	enemy[i] = NULL;
+		//	enemyCount -= 1;
+		//}
 	}
 }
 
@@ -110,14 +132,7 @@ void GameScene::DrawImage()
 	this->Draw_BitBlt(player->HP);
 	this->Draw_TransparentBlt(player->HPbar, 255, 255, 255);
 
-	if (player->Image_toggle == 1)
-	{
-		this->Draw_TransparentBlt(player->playerImage[0], 255, 255, 255);
-	}
-	else if (player->Image_toggle == -1)
-	{
-		this->Draw_TransparentBlt(player->playerImage[1], 255, 255, 255);
-	}
+	this->Draw_TransparentBlt(player->playerImage[player->Image_toggle], 255, 255, 255);
 
 	for (int i = 0; i < enemyCount; i++)
 	{
@@ -129,14 +144,7 @@ void GameScene::DrawImage()
 			enemy[i]->enemyImage[1]->set_X(enemy[i]->enemyImage[0]->get_X());
 			enemy[i]->enemyImage[1]->set_Y(enemy[i]->enemyImage[0]->get_Y());
 
-			if (player->playerImage[0]->get_X() > enemy[i]->enemyImage[0]->get_X())
-			{
-				this->Draw_TransparentBlt(enemy[i]->enemyImage[0], 255, 255, 255);
-			}
-			else
-			{
-				this->Draw_TransparentBlt(enemy[i]->enemyImage[1], 255, 255, 255);
-			}
+			this->Draw_TransparentBlt(enemy[i]->enemyImage[enemy[i]->Image_toggle], 255, 255, 255);
 		}
 	}
 

@@ -1,23 +1,13 @@
 #pragma once
 
-#include <Windows.h>
-#include "Layer.h"
-#include "macro.h"
-#include "Character.h"
-
-class Player :public Character
+class Character
 {
-public:
-	gBitmap* playerImage[2];
-	gBitmap* HPbar;
-	gBitmap* HP;
-
 public:
 	float moving_x;
 	float moving_y;
 
 	int Image_toggle;
-	
+
 private:
 	float speed_x;
 	float speed_y;
@@ -28,10 +18,8 @@ private:
 	float field_h;
 
 public:
-	Player(HWND hWnd, HINSTANCE g_hInst);
-	~Player();
-
-	void setKeydown();
+	Character() {};
+	~Character() {};
 
 	void setSpeed_x(float speed) { speed_x = speed; }
 	void setSpeed_y(float speed) { speed_y = speed; }

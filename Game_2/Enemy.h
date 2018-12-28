@@ -20,6 +20,8 @@ private:
 
 	float field_x;
 	float field_y;
+	float field_w;
+	float field_h;
 
 public:
 	Enemy(HWND hWnd, HINSTANCE g_hInst);
@@ -35,7 +37,11 @@ public:
 	}
 	void setfield_x(float field_x) { this->field_x = field_x; }
 	void setfield_y(float field_y) { this->field_y = field_y; }
+	void setfield_w(float field_w) { this->field_w = field_w; }
+	void setfield_h(float field_h) { this->field_h = field_h; }
 
 	float getfield_x() { return field_x; }
 	float getfield_y() { return field_y; }
+	float getfield_w() { return field_w; }
+	float getfield_h() { return field_h; }
 };

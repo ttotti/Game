@@ -86,6 +86,9 @@
     <ClInclude Include="Enemy.h">
       <Filter>소스 파일\Player</Filter>
     </ClInclude>
+    <ClInclude Include="Character.h">
+      <Filter>소스 파일\Player</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <Image Include="..\resource\background.bmp">

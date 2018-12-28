@@ -23,6 +23,8 @@ Enemy::Enemy(HWND hWnd, HINSTANCE g_hInst)
 
 	field_x = 0.0f;
 	field_y = 0.0f;
+	field_w = 0.0f;
+	field_h = 0.0f;
 }
 
 Enemy::~Enemy()

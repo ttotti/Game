@@ -15,8 +15,8 @@ GameScene::GameScene(HINSTANCE g_hInst, HWND hWnd)
 	background->set_X(-background->get_W() / 4 + player->moving_x);
 	background->set_Y(-background->get_H() / 4 + player->moving_y);
 
-	player->setfield_x(player->getfield_x() - background->get_X());
-	player->setfield_y(player->getfield_y() - background->get_Y());
+	player->setRECT_left(player->getRECT_left() - background->get_X());
+	player->setRECT_top(player->getRECT_top() - background->get_Y());
 
 	for (int i = 0; i < MAX_ENEMY; i++)
 	{
@@ -43,8 +43,7 @@ GameScene::~GameScene()
 void GameScene::Loop()
 {
 	player->setKeydown();
-	player->setSpeed_x(15.0f);
-	player->setSpeed_y(15.0f);
+	player->setSpeed(15.0f);
 
 	if (enemyCount < MAX_ENEMY)
 	{
@@ -53,7 +52,7 @@ void GameScene::Loop()
 			if (enemy[i] == NULL)
 			{
 				enemy[i] = new Enemy(hWnd, g_hInst);
-				enemy[i]->setfield_Point(rand() % Drawmap_WIDTH + 0, rand() % Drawmap_HEIGHT + 0);
+				enemy[i]->setRECT_Point(rand() % Drawmap_WIDTH + 0, rand() % Drawmap_HEIGHT + 0);
 				enemyCount += 1;
 			}
 		}
@@ -70,41 +69,41 @@ void GameScene::Loop()
 			enemy[i]->Image_toggle = 1;
 		}
 
-		if (player->getfield_x() != enemy[i]->getfield_x() || player->getfield_y() != enemy[i]->getfield_y())
+		if (player->getRECT_left() != enemy[i]->getRECT_left() || player->getRECT_top() != enemy[i]->getRECT_top())
 		{
 		//	printf("player->getfield_x = %f\n", player->getfield_x());
 		//	printf("player->getfield_y = %f\n\n", player->getfield_y());
 		//	printf("enemy->getfield_x = %f\n", enemy[0]->getfield_x());
 		    //printf("enemy->getfield_y = %f\n\n", enemy[0]->getfield_y());
 
-			if (player->getfield_x() > enemy[i]->getfield_x())
+			if (player->getRECT_left() > enemy[i]->getRECT_left())
 			{
-				enemy[i]->setfield_x(enemy[i]->getfield_x() + enemy[i]->moving_x);
+				enemy[i]->setRECT_left(enemy[i]->getRECT_left() + enemy[i]->moving_x);
 			}
 
-			if (player->getfield_y() > enemy[i]->getfield_y())
+			if (player->getRECT_top() > enemy[i]->getRECT_top())
 			{
-				enemy[i]->setfield_y(enemy[i]->getfield_y() + enemy[i]->moving_y);
+				enemy[i]->setRECT_top(enemy[i]->getRECT_top() + enemy[i]->moving_y);
 			}
 
-			if (player->getfield_x() < enemy[i]->getfield_x())
+			if (player->getRECT_left() < enemy[i]->getRECT_left())
 			{
-				enemy[i]->setfield_x(enemy[i]->getfield_x() - enemy[i]->moving_x);
+				enemy[i]->setRECT_left(enemy[i]->getRECT_left() - enemy[i]->moving_x);
 			}
 
-			if (player->getfield_y() < enemy[i]->getfield_y())
+			if (player->getRECT_top() < enemy[i]->getRECT_top())
 			{
-				enemy[i]->setfield_y(enemy[i]->getfield_y() - enemy[i]->moving_y);
+				enemy[i]->setRECT_top(enemy[i]->getRECT_top() - enemy[i]->moving_y);
 			}
 
-			enemy[i]->setfield_w(enemy[i]->getfield_x() + 50);
-			enemy[i]->setfield_h(enemy[i]->getfield_y() + 50);
+			enemy[i]->setRECT_right(enemy[i]->getRECT_left() + 50);
+			enemy[i]->setRECT_bottom(enemy[i]->getRECT_top() + 50);
 		}
 
-		if (player->getfield_x() <= enemy[i]->getfield_x() &&
-			player->getfield_w() >= enemy[i]->getfield_x() &&
-			player->getfield_y() <= enemy[i]->getfield_y() &&
-			player->getfield_h() >= enemy[i]->getfield_y())
+		if (player->getRECT_left() <= enemy[i]->getRECT_left() &&
+			player->getRECT_right() >= enemy[i]->getRECT_left() &&
+			player->getRECT_top() <= enemy[i]->getRECT_top() &&
+			player->getRECT_bottom() >= enemy[i]->getRECT_top())
 		{
 			delete enemy[i];
 			enemy[i] = NULL;
@@ -138,11 +137,8 @@ void GameScene::DrawImage()
 	{
 		if (enemy[i] != NULL)
 		{
-			enemy[i]->enemyImage[0]->set_X(enemy[i]->getfield_x() + background->get_X());
-			enemy[i]->enemyImage[0]->set_Y(enemy[i]->getfield_y() + background->get_Y());
-
-			enemy[i]->enemyImage[1]->set_X(enemy[i]->enemyImage[0]->get_X());
-			enemy[i]->enemyImage[1]->set_Y(enemy[i]->enemyImage[0]->get_Y());
+			enemy[i]->enemyImage[enemy[i]->Image_toggle]->set_X(enemy[i]->getRECT_left() + background->get_X());
+			enemy[i]->enemyImage[enemy[i]->Image_toggle]->set_Y(enemy[i]->getRECT_top() + background->get_Y());
 
 			this->Draw_TransparentBlt(enemy[i]->enemyImage[enemy[i]->Image_toggle], 255, 255, 255);
 		}

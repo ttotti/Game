@@ -30,10 +30,10 @@ Player::Player(HWND hWnd, HINSTANCE g_hInst)
 	speed_y = 2.0f;
 	Image_toggle = 1;
 
-	field_x = playerImage[0]->get_X();
-	field_y = playerImage[0]->get_Y();
-	field_w = field_x + playerImage[0]->get_W();
-	field_h = field_y + playerImage[0]->get_H();
+	rect.left = playerImage[0]->get_X();
+	rect.top = playerImage[0]->get_Y();
+	rect.right = rect.left + playerImage[0]->get_W();
+	rect.bottom = rect.top + playerImage[0]->get_H();
 }
 
 Player::~Player()
@@ -60,7 +60,7 @@ void Player::setKeydown()
 	if (GetAsyncKeyState(VK_LEFT))
 	{
 		moving_x += speed_x;
-		field_x -= speed_x;
+		rect.left -= speed_x;
 		Image_toggle = 1;
 
 		//printf("field = %f\n", field_x);
@@ -68,7 +68,7 @@ void Player::setKeydown()
 	if (GetAsyncKeyState(VK_RIGHT))
 	{
 		moving_x -= speed_x;
-		field_x += speed_x;
+		rect.left += speed_x;
 		Image_toggle = 0;
 
 		//printf("field = %f\n", field_x);
@@ -76,18 +76,17 @@ void Player::setKeydown()
 	if (GetAsyncKeyState(VK_UP))
 	{
 		moving_y += speed_y;
-		field_y -= speed_y;
-
+		rect.top -= speed_y;
 		//printf("UP 입력!\n");
 	}
 	if (GetAsyncKeyState(VK_DOWN))
 	{
 		moving_y -= speed_y;
-		field_y += speed_y;
+		rect.top += speed_y;
 
 		//printf("DOWN 입력!\n");
 	}
 
-	field_w = field_x + 50;
-	field_h = field_y + 50;
+	rect.right = rect.left + 50;
+	rect.bottom = rect.top + 50;
 }

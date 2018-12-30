@@ -16,6 +16,8 @@ private:
 
 	Player* player;
 	Enemy* enemy[MAX_ENEMY];
+	//Character* player;
+	//Character* enemy[MAX_ENEMY];
 
 	gBitmap* background;
 

@@ -5,19 +5,27 @@
 class Character
 {
 public:
-	float moving_x;
-	float moving_y;
+	float speed_x;
+	float speed_y;
 
 	int Image_toggle;
 
 protected:
-	float speed_x;
-	float speed_y;
-
 	RECT rect;
+
 public:
-	Character() {};
-	~Character() {};
+	Character()
+	{
+		speed_x = 2.0f;
+		speed_y = 2.0f;
+		Image_toggle = 1;
+
+		rect.left = 0;
+		rect.top = 0;
+		rect.right = 0;
+		rect.bottom = 0;
+	};
+	~Character() { printf("Character Å¬·¡½º ¼Ò¸ê!\n"); }
 
 	void setSpeed(float speed) { speed_x = speed;  speed_y = speed; }
 	void setSpeed_x(float speed) { speed_x = speed; }

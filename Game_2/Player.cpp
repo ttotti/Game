@@ -26,9 +26,6 @@ Player::Player(HWND hWnd, HINSTANCE g_hInst)
 
 	moving_x = 0.0f;
 	moving_y = 0.0f;
-	speed_x = 2.0f;
-	speed_y = 2.0f;
-	Image_toggle = 1;
 
 	rect.left = playerImage[0]->get_X();
 	rect.top = playerImage[0]->get_Y();
@@ -46,6 +43,9 @@ Player::~Player()
 
 	delete HPbar;
 	HPbar = NULL;
+
+	delete HP;
+	HP = NULL;
 
 	printf("Player ¼Ò¸ê!\n");
 }

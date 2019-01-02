@@ -71,29 +71,24 @@ void GameScene::Loop()
 
 		if (player->getRECT_left() != enemy[i]->getRECT_left() || player->getRECT_top() != enemy[i]->getRECT_top())
 		{
-		//	printf("player->getfield_x = %f\n", player->getfield_x());
-		//	printf("player->getfield_y = %f\n\n", player->getfield_y());
-		//	printf("enemy->getfield_x = %f\n", enemy[0]->getfield_x());
-		    //printf("enemy->getfield_y = %f\n\n", enemy[0]->getfield_y());
-
 			if (player->getRECT_left() > enemy[i]->getRECT_left())
 			{
-				enemy[i]->setRECT_left(enemy[i]->getRECT_left() + enemy[i]->moving_x);
+				enemy[i]->setRECT_left(enemy[i]->getRECT_left() + enemy[i]->speed_x);
 			}
 
 			if (player->getRECT_top() > enemy[i]->getRECT_top())
 			{
-				enemy[i]->setRECT_top(enemy[i]->getRECT_top() + enemy[i]->moving_y);
+				enemy[i]->setRECT_top(enemy[i]->getRECT_top() + enemy[i]->speed_y);
 			}
 
 			if (player->getRECT_left() < enemy[i]->getRECT_left())
 			{
-				enemy[i]->setRECT_left(enemy[i]->getRECT_left() - enemy[i]->moving_x);
+				enemy[i]->setRECT_left(enemy[i]->getRECT_left() - enemy[i]->speed_x);
 			}
 
 			if (player->getRECT_top() < enemy[i]->getRECT_top())
 			{
-				enemy[i]->setRECT_top(enemy[i]->getRECT_top() - enemy[i]->moving_y);
+				enemy[i]->setRECT_top(enemy[i]->getRECT_top() - enemy[i]->speed_y);
 			}
 
 			enemy[i]->setRECT_right(enemy[i]->getRECT_left() + 50);

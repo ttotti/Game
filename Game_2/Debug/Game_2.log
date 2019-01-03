@@ -1,25 +1,33 @@
-﻿  Enemy.cpp
-c:\users\ttotti\documents\visual studio 2017\projects\winapi\game_2\game_2\character.h(40): warning C4244: '=': 'float'에서 'LONG'(으)로 변환하면서 데이터가 손실될 수 있습니다.
-c:\users\ttotti\documents\visual studio 2017\projects\winapi\game_2\game_2\character.h(41): warning C4244: '=': 'float'에서 'LONG'(으)로 변환하면서 데이터가 손실될 수 있습니다.
-c:\users\ttotti\documents\visual studio 2017\projects\winapi\game_2\game_2\character.h(42): warning C4244: '=': 'float'에서 'LONG'(으)로 변환하면서 데이터가 손실될 수 있습니다.
-c:\users\ttotti\documents\visual studio 2017\projects\winapi\game_2\game_2\character.h(43): warning C4244: '=': 'float'에서 'LONG'(으)로 변환하면서 데이터가 손실될 수 있습니다.
-  GameLoop.cpp
-c:\users\ttotti\documents\visual studio 2017\projects\winapi\game_2\game_2\character.h(40): warning C4244: '=': 'float'에서 'LONG'(으)로 변환하면서 데이터가 손실될 수 있습니다.
-c:\users\ttotti\documents\visual studio 2017\projects\winapi\game_2\game_2\character.h(41): warning C4244: '=': 'float'에서 'LONG'(으)로 변환하면서 데이터가 손실될 수 있습니다.
-c:\users\ttotti\documents\visual studio 2017\projects\winapi\game_2\game_2\character.h(42): warning C4244: '=': 'float'에서 'LONG'(으)로 변환하면서 데이터가 손실될 수 있습니다.
-c:\users\ttotti\documents\visual studio 2017\projects\winapi\game_2\game_2\character.h(43): warning C4244: '=': 'float'에서 'LONG'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+﻿  GameLoop.cpp
+c:\users\ttotti\documents\visual studio 2017\projects\winapi\game_2\game_2\character.h(36): warning C4244: '=': 'float'에서 'LONG'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+c:\users\ttotti\documents\visual studio 2017\projects\winapi\game_2\game_2\character.h(37): warning C4244: '=': 'float'에서 'LONG'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+c:\users\ttotti\documents\visual studio 2017\projects\winapi\game_2\game_2\character.h(38): warning C4244: '=': 'float'에서 'LONG'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+c:\users\ttotti\documents\visual studio 2017\projects\winapi\game_2\game_2\character.h(39): warning C4244: '=': 'float'에서 'LONG'(으)로 변환하면서 데이터가 손실될 수 있습니다.
   GameScene.cpp
-c:\users\ttotti\documents\visual studio 2017\projects\winapi\game_2\game_2\character.h(40): warning C4244: '=': 'float'에서 'LONG'(으)로 변환하면서 데이터가 손실될 수 있습니다.
-c:\users\ttotti\documents\visual studio 2017\projects\winapi\game_2\game_2\character.h(41): warning C4244: '=': 'float'에서 'LONG'(으)로 변환하면서 데이터가 손실될 수 있습니다.
-c:\users\ttotti\documents\visual studio 2017\projects\winapi\game_2\game_2\character.h(42): warning C4244: '=': 'float'에서 'LONG'(으)로 변환하면서 데이터가 손실될 수 있습니다.
-c:\users\ttotti\documents\visual studio 2017\projects\winapi\game_2\game_2\character.h(43): warning C4244: '=': 'float'에서 'LONG'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+c:\users\ttotti\documents\visual studio 2017\projects\winapi\game_2\game_2\character.h(36): warning C4244: '=': 'float'에서 'LONG'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+c:\users\ttotti\documents\visual studio 2017\projects\winapi\game_2\game_2\character.h(37): warning C4244: '=': 'float'에서 'LONG'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+c:\users\ttotti\documents\visual studio 2017\projects\winapi\game_2\game_2\character.h(38): warning C4244: '=': 'float'에서 'LONG'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+c:\users\ttotti\documents\visual studio 2017\projects\winapi\game_2\game_2\character.h(39): warning C4244: '=': 'float'에서 'LONG'(으)로 변환하면서 데이터가 손실될 수 있습니다.
 c:\users\ttotti\documents\visual studio 2017\projects\winapi\game_2\game_2\gamescene.cpp(94): warning C4244: '인수': 'int'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
 c:\users\ttotti\documents\visual studio 2017\projects\winapi\game_2\game_2\gamescene.cpp(95): warning C4244: '인수': 'int'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+  Player.cpp
+c:\users\ttotti\documents\visual studio 2017\projects\winapi\game_2\game_2\character.h(36): warning C4244: '=': 'float'에서 'LONG'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+c:\users\ttotti\documents\visual studio 2017\projects\winapi\game_2\game_2\character.h(37): warning C4244: '=': 'float'에서 'LONG'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+c:\users\ttotti\documents\visual studio 2017\projects\winapi\game_2\game_2\character.h(38): warning C4244: '=': 'float'에서 'LONG'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+c:\users\ttotti\documents\visual studio 2017\projects\winapi\game_2\game_2\character.h(39): warning C4244: '=': 'float'에서 'LONG'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+c:\users\ttotti\documents\visual studio 2017\projects\winapi\game_2\game_2\player.cpp(30): warning C4244: '=': 'float'에서 'LONG'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+c:\users\ttotti\documents\visual studio 2017\projects\winapi\game_2\game_2\player.cpp(31): warning C4244: '=': 'float'에서 'LONG'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+c:\users\ttotti\documents\visual studio 2017\projects\winapi\game_2\game_2\player.cpp(32): warning C4244: '=': 'float'에서 'LONG'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+c:\users\ttotti\documents\visual studio 2017\projects\winapi\game_2\game_2\player.cpp(33): warning C4244: '=': 'float'에서 'LONG'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+c:\users\ttotti\documents\visual studio 2017\projects\winapi\game_2\game_2\player.cpp(62): warning C4244: '-=': 'float'에서 'LONG'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+c:\users\ttotti\documents\visual studio 2017\projects\winapi\game_2\game_2\player.cpp(69): warning C4244: '+=': 'float'에서 'LONG'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+c:\users\ttotti\documents\visual studio 2017\projects\winapi\game_2\game_2\player.cpp(78): warning C4244: '-=': 'float'에서 'LONG'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+c:\users\ttotti\documents\visual studio 2017\projects\winapi\game_2\game_2\player.cpp(85): warning C4244: '+=': 'float'에서 'LONG'(으)로 변환하면서 데이터가 손실될 수 있습니다.
   main.cpp
-c:\users\ttotti\documents\visual studio 2017\projects\winapi\game_2\game_2\character.h(40): warning C4244: '=': 'float'에서 'LONG'(으)로 변환하면서 데이터가 손실될 수 있습니다.
-c:\users\ttotti\documents\visual studio 2017\projects\winapi\game_2\game_2\character.h(41): warning C4244: '=': 'float'에서 'LONG'(으)로 변환하면서 데이터가 손실될 수 있습니다.
-c:\users\ttotti\documents\visual studio 2017\projects\winapi\game_2\game_2\character.h(42): warning C4244: '=': 'float'에서 'LONG'(으)로 변환하면서 데이터가 손실될 수 있습니다.
-c:\users\ttotti\documents\visual studio 2017\projects\winapi\game_2\game_2\character.h(43): warning C4244: '=': 'float'에서 'LONG'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+c:\users\ttotti\documents\visual studio 2017\projects\winapi\game_2\game_2\character.h(36): warning C4244: '=': 'float'에서 'LONG'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+c:\users\ttotti\documents\visual studio 2017\projects\winapi\game_2\game_2\character.h(37): warning C4244: '=': 'float'에서 'LONG'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+c:\users\ttotti\documents\visual studio 2017\projects\winapi\game_2\game_2\character.h(38): warning C4244: '=': 'float'에서 'LONG'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+c:\users\ttotti\documents\visual studio 2017\projects\winapi\game_2\game_2\character.h(39): warning C4244: '=': 'float'에서 'LONG'(으)로 변환하면서 데이터가 손실될 수 있습니다.
 c:\users\ttotti\documents\visual studio 2017\projects\winapi\game_2\game_2\main.cpp(72): warning C4101: 'hdc' :참조되지 않은 지역 변수입니다.
   코드를 생성하고 있습니다...
   Game_2.vcxproj -> C:\Users\ttotti\Documents\Visual Studio 2017\Projects\WinAPI\Game_2\Debug\Game_2.exe

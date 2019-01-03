@@ -13,6 +13,8 @@ Enemy::Enemy(HWND hWnd, HINSTANCE g_hInst)
 
 	enemyImage[1] = new gBitmap;
 	enemyImage[1]->SetBitmap(hWnd, g_hInst, IDB_Enemy3);
+
+	speed = 2.0f;
 }
 
 Enemy::~Enemy()

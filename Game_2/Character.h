@@ -5,8 +5,7 @@
 class Character
 {
 public:
-	float speed_x;
-	float speed_y;
+	float speed;
 
 	int Image_toggle;
 
@@ -16,8 +15,7 @@ protected:
 public:
 	Character()
 	{
-		speed_x = 2.0f;
-		speed_y = 2.0f;
+		speed = 0.0f;
 		Image_toggle = 1;
 
 		rect.left = 0;
@@ -27,9 +25,7 @@ public:
 	};
 	~Character() { printf("Character Å¬·¡½º ¼Ò¸ê!\n"); }
 
-	void setSpeed(float speed) { speed_x = speed;  speed_y = speed; }
-	void setSpeed_x(float speed) { speed_x = speed; }
-	void setSpeed_y(float speed) { speed_y = speed; }
+	void setSpeed(float speed) { this->speed = speed; }
 
 	void setRECT_Point(int rect_left, int rect_top)
 	{
@@ -46,4 +42,6 @@ public:
 	int getRECT_right() { return rect.right; }
 	int getRECT_top() { return rect.top; }
 	int getRECT_bottom() { return rect.bottom; }
+
+	RECT getRECT() { return rect; }
 };

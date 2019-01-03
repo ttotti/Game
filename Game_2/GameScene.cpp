@@ -73,47 +73,34 @@ void GameScene::Loop()
 		{
 			if (player->getRECT_left() > enemy[i]->getRECT_left())
 			{
-				enemy[i]->setRECT_left(enemy[i]->getRECT_left() + enemy[i]->speed_x);
+				enemy[i]->setRECT_left(enemy[i]->getRECT_left() + enemy[i]->speed);
 			}
 
 			if (player->getRECT_top() > enemy[i]->getRECT_top())
 			{
-				enemy[i]->setRECT_top(enemy[i]->getRECT_top() + enemy[i]->speed_y);
+				enemy[i]->setRECT_top(enemy[i]->getRECT_top() + enemy[i]->speed);
 			}
 
 			if (player->getRECT_left() < enemy[i]->getRECT_left())
 			{
-				enemy[i]->setRECT_left(enemy[i]->getRECT_left() - enemy[i]->speed_x);
+				enemy[i]->setRECT_left(enemy[i]->getRECT_left() - enemy[i]->speed);
 			}
 
 			if (player->getRECT_top() < enemy[i]->getRECT_top())
 			{
-				enemy[i]->setRECT_top(enemy[i]->getRECT_top() - enemy[i]->speed_y);
+				enemy[i]->setRECT_top(enemy[i]->getRECT_top() - enemy[i]->speed);
 			}
 
 			enemy[i]->setRECT_right(enemy[i]->getRECT_left() + 50);
 			enemy[i]->setRECT_bottom(enemy[i]->getRECT_top() + 50);
 		}
 
-		if (player->getRECT_left() <= enemy[i]->getRECT_left() &&
-			player->getRECT_right() >= enemy[i]->getRECT_left() &&
-			player->getRECT_top() <= enemy[i]->getRECT_top() &&
-			player->getRECT_bottom() >= enemy[i]->getRECT_top())
+		if (isCollision(player->getRECT(), enemy[i]->getRECT()))
 		{
 			delete enemy[i];
 			enemy[i] = NULL;
 			enemyCount -= 1;
 		}
-
-
-		//if (player->getfield_x() == enemy[i]->getfield_x() 
-		//	&& player->getfield_x()+50
-		//	&& player->getfield_y() == enemy[i]->getfield_y())
-		//{
-		//	delete enemy[i];
-		//	enemy[i] = NULL;
-		//	enemyCount -= 1;
-		//}
 	}
 }
 

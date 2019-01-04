@@ -1,7 +1,7 @@
 #pragma once
 
 #include "Layer.h"
-#include "macro.h"
+//#include "macro.h"
 
 #include "Player.h"
 #include "Enemy.h"
@@ -11,6 +11,8 @@
 class GameScene : public Layer
 {
 private:
+	enum SELECT { GAMESTART, RESTART, MAINSCENE, PAUSE };
+
 	HWND hWnd;
 	HINSTANCE g_hInst;
 
@@ -22,6 +24,7 @@ private:
 	gBitmap* background;
 
 public:
+	SELECT select;
 	int enemyCount;
 
 public:

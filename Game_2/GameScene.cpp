@@ -22,6 +22,8 @@ GameScene::GameScene(HINSTANCE g_hInst, HWND hWnd)
 	{
 		enemy[i] = NULL;
 	}
+
+	select = GAMESTART;
 }
 
 GameScene::~GameScene()
@@ -42,65 +44,78 @@ GameScene::~GameScene()
 
 void GameScene::Loop()
 {
-	player->setKeydown();
-	player->setSpeed(15.0f);
-
-	if (enemyCount < MAX_ENEMY)
+	if (select == GAMESTART)
 	{
+		player->setKeydown();
+		player->setSpeed(15.0f);
+
+		if (enemyCount < MAX_ENEMY)
+		{
+			for (int i = 0; i < MAX_ENEMY; i++)
+			{
+				if (enemy[i] == NULL)
+				{
+					enemy[i] = new Enemy(hWnd, g_hInst);
+					enemy[i]->setRECT_Point(rand() % Drawmap_WIDTH + 0, rand() % Drawmap_HEIGHT + 0);
+					enemyCount += 1;
+				}
+			}
+		}
+
 		for (int i = 0; i < MAX_ENEMY; i++)
 		{
-			if (enemy[i] == NULL)
+			if (player->playerImage[player->Image_toggle]->get_X() > enemy[i]->enemyImage[enemy[i]->Image_toggle]->get_X())
 			{
-				enemy[i] = new Enemy(hWnd, g_hInst);
-				enemy[i]->setRECT_Point(rand() % Drawmap_WIDTH + 0, rand() % Drawmap_HEIGHT + 0);
-				enemyCount += 1;
+				enemy[i]->Image_toggle = 0;
+			}
+			else
+			{
+				enemy[i]->Image_toggle = 1;
+			}
+
+			if (player->getRECT_left() != enemy[i]->getRECT_left() || player->getRECT_top() != enemy[i]->getRECT_top())
+			{
+				if (player->getRECT_left() > enemy[i]->getRECT_left())
+				{
+					enemy[i]->setRECT_left(enemy[i]->getRECT_left() + enemy[i]->speed);
+				}
+
+				if (player->getRECT_top() > enemy[i]->getRECT_top())
+				{
+					enemy[i]->setRECT_top(enemy[i]->getRECT_top() + enemy[i]->speed);
+				}
+
+				if (player->getRECT_left() < enemy[i]->getRECT_left())
+				{
+					enemy[i]->setRECT_left(enemy[i]->getRECT_left() - enemy[i]->speed);
+				}
+
+				if (player->getRECT_top() < enemy[i]->getRECT_top())
+				{
+					enemy[i]->setRECT_top(enemy[i]->getRECT_top() - enemy[i]->speed);
+				}
+
+				enemy[i]->setRECT_right(enemy[i]->getRECT_left() + 50);
+				enemy[i]->setRECT_bottom(enemy[i]->getRECT_top() + 50);
+			}
+
+			if (isCollision(player->getRECT(), enemy[i]->getRECT()))
+			{
+				if (player->Gameover())
+				{
+					select = PAUSE;
+					break;
+				}
+
+				delete enemy[i];
+				enemy[i] = NULL;
+				enemyCount -= 1;
 			}
 		}
 	}
-
-	for (int i = 0; i < MAX_ENEMY; i++)
+	else if (select == PAUSE)
 	{
-		if (player->playerImage[player->Image_toggle]->get_X() > enemy[i]->enemyImage[enemy[i]->Image_toggle]->get_X())
-		{
-			enemy[i]->Image_toggle = 0;
-		}
-		else
-		{
-			enemy[i]->Image_toggle = 1;
-		}
-
-		if (player->getRECT_left() != enemy[i]->getRECT_left() || player->getRECT_top() != enemy[i]->getRECT_top())
-		{
-			if (player->getRECT_left() > enemy[i]->getRECT_left())
-			{
-				enemy[i]->setRECT_left(enemy[i]->getRECT_left() + enemy[i]->speed);
-			}
-
-			if (player->getRECT_top() > enemy[i]->getRECT_top())
-			{
-				enemy[i]->setRECT_top(enemy[i]->getRECT_top() + enemy[i]->speed);
-			}
-
-			if (player->getRECT_left() < enemy[i]->getRECT_left())
-			{
-				enemy[i]->setRECT_left(enemy[i]->getRECT_left() - enemy[i]->speed);
-			}
-
-			if (player->getRECT_top() < enemy[i]->getRECT_top())
-			{
-				enemy[i]->setRECT_top(enemy[i]->getRECT_top() - enemy[i]->speed);
-			}
-
-			enemy[i]->setRECT_right(enemy[i]->getRECT_left() + 50);
-			enemy[i]->setRECT_bottom(enemy[i]->getRECT_top() + 50);
-		}
-
-		if (isCollision(player->getRECT(), enemy[i]->getRECT()))
-		{
-			delete enemy[i];
-			enemy[i] = NULL;
-			enemyCount -= 1;
-		}
+		
 	}
 }
 
@@ -124,6 +139,11 @@ void GameScene::DrawImage()
 
 			this->Draw_TransparentBlt(enemy[i]->enemyImage[enemy[i]->Image_toggle], 255, 255, 255);
 		}
+	}
+
+	if (select == PAUSE)
+	{
+
 	}
 
 	this->Draw();

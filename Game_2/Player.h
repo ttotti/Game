@@ -15,9 +15,12 @@ public:
 	float moving_x;
 	float moving_y;
 
+	int life;
+
 public:
 	Player(HWND hWnd, HINSTANCE g_hInst);
 	~Player();
 
 	void setKeydown();
+	bool Gameover();
 };

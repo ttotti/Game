@@ -14,9 +14,9 @@ Player::Player(HWND hWnd, HINSTANCE g_hInst)
 
 	HPbar = new gBitmap;
 	HPbar->SetBitmap(hWnd, g_hInst, IDB_HPbar);
-	HPbar->set_X(playerImage[0]->get_X() + 5);
+	HPbar->set_X(playerImage[0]->get_X());
 	HPbar->set_Y(playerImage[0]->get_Y() - 10);
-	HPbar->set_W(HPbar->get_W() - 10);
+	HPbar->set_W(HPbar->get_W());
 
 	HP = new gBitmap;
 	HP->SetBitmap(hWnd, g_hInst, IDB_HP);
@@ -26,6 +26,7 @@ Player::Player(HWND hWnd, HINSTANCE g_hInst)
 
 	moving_x = 0.0f;
 	moving_y = 0.0f;
+	life = 0;
 
 	rect.left = playerImage[0]->get_X();
 	rect.top = playerImage[0]->get_Y();
@@ -94,4 +95,18 @@ void Player::setKeydown()
 	//printf("speed_R = %f\n", speed_R);
 	//printf("speed_U = %f\n", speed_U);
 	//printf("speed_D = %f\n", speed_D);
+}
+
+bool Player::Gameover()
+{
+	life += 10;
+
+	HP->set_W(HPbar->get_W() - life);
+
+	if (life > 40)
+	{
+		return true;
+	}
+
+	return false;
 }

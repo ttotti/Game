@@ -127,6 +127,24 @@
     <Image Include="..\resource\HPbar.bmp">
       <Filter>리소스 파일</Filter>
     </Image>
+    <Image Include="..\resource\Gameover_background.bmp">
+      <Filter>리소스 파일</Filter>
+    </Image>
+    <Image Include="..\resource\Gameover_Icon.bmp">
+      <Filter>리소스 파일</Filter>
+    </Image>
+    <Image Include="..\resource\MainScene_Icon.bmp">
+      <Filter>리소스 파일</Filter>
+    </Image>
+    <Image Include="..\resource\MainScene_Icon2.bmp">
+      <Filter>리소스 파일</Filter>
+    </Image>
+    <Image Include="..\resource\ReStart_Icon.bmp">
+      <Filter>리소스 파일</Filter>
+    </Image>
+    <Image Include="..\resource\ReStart_Icon2.bmp">
+      <Filter>리소스 파일</Filter>
+    </Image>
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="Game_2.rc">

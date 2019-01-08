@@ -167,13 +167,19 @@
     <Image Include="..\resource\background.bmp" />
     <Image Include="..\resource\Enemy1.bmp" />
     <Image Include="..\resource\Enemy3.bmp" />
+    <Image Include="..\resource\Gameover_background.bmp" />
+    <Image Include="..\resource\Gameover_Icon.bmp" />
     <Image Include="..\resource\HP.bmp" />
     <Image Include="..\resource\HPbar.bmp" />
     <Image Include="..\resource\mainScene.bmp" />
+    <Image Include="..\resource\MainScene_Icon.bmp" />
+    <Image Include="..\resource\MainScene_Icon2.bmp" />
     <Image Include="..\resource\Player1.bmp" />
     <Image Include="..\resource\Player3.bmp" />
     <Image Include="..\resource\Quit_Icon.bmp" />
     <Image Include="..\resource\Quit_Icon2.bmp" />
+    <Image Include="..\resource\ReStart_Icon.bmp" />
+    <Image Include="..\resource\ReStart_Icon2.bmp" />
     <Image Include="..\resource\Start_Icon.bmp" />
     <Image Include="..\resource\Start_Icon2.bmp" />
   </ItemGroup>

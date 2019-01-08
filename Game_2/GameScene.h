@@ -6,7 +6,7 @@
 #include "Player.h"
 #include "Enemy.h"
 
-#define MAX_ENEMY 1
+#define MAX_ENEMY 10
 
 class GameScene : public Layer
 {
@@ -22,10 +22,16 @@ private:
 	//Character* enemy[MAX_ENEMY];
 
 	gBitmap* background;
+	gBitmap* gameover_ground;
+
+	gBitmap* Gameover_Icon;
+	gBitmap* ReStart_Icon[2];
+	gBitmap* MainScene_Icon[2];
 
 public:
 	SELECT select;
 	int enemyCount;
+	int Alpha;
 
 public:
 	GameScene();

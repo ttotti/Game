@@ -5,15 +5,37 @@ GameScene::GameScene()
 }
 
 GameScene::GameScene(HINSTANCE g_hInst, HWND hWnd)
-	:Layer(g_hInst, hWnd), hWnd(hWnd), g_hInst(g_hInst), enemyCount(0)
+	:Layer(g_hInst, hWnd), hWnd(hWnd), g_hInst(g_hInst), enemyCount(0), Alpha(0)
 {
 	background = new gBitmap;
 	background->SetBitmap(hWnd, g_hInst, IDB_background);
 
 	player = new Player(hWnd, g_hInst);
 
+	gameover_ground = new gBitmap;
+	gameover_ground->SetBitmap(hWnd, g_hInst, IDB_Gameover_ground);
+
 	background->set_X(-background->get_W() / 4 + player->moving_x);
 	background->set_Y(-background->get_H() / 4 + player->moving_y);
+
+	Gameover_Icon = new gBitmap;
+	Gameover_Icon->SetBitmap(hWnd, g_hInst, IDB_Gameover_Icon);
+	Gameover_Icon->set_X((WIN_WIDTH / 2)-120);
+	Gameover_Icon->set_Y(150);
+
+	for (int i = 0; i < 2; i++)
+	{
+		ReStart_Icon[i] = new gBitmap;
+		MainScene_Icon[i] = new gBitmap;
+
+		ReStart_Icon[i]->SetBitmap(hWnd, g_hInst, IDB_ReStart_Icon + i);
+		ReStart_Icon[i]->set_X(Gameover_Icon->get_X());
+		ReStart_Icon[i]->set_Y(Gameover_Icon->get_Y() + 100);
+
+		MainScene_Icon[i]->SetBitmap(hWnd, g_hInst, IDB_MainScene_Icon + i);
+		MainScene_Icon[i]->set_X(Gameover_Icon->get_X());
+		MainScene_Icon[i]->set_Y(Gameover_Icon->get_Y() + 200);
+	}
 
 	player->setRECT_left(player->getRECT_left() - background->get_X());
 	player->setRECT_top(player->getRECT_top() - background->get_Y());
@@ -30,16 +52,42 @@ GameScene::~GameScene()
 {
 	delete background;
 	background = NULL;
+	//printf("background 模資!\n");
 
 	delete player;
+	player = NULL;
+	//printf("player 模資!\n");
+
+	delete gameover_ground;
+	gameover_ground = NULL;
+	//printf("gameover_ground 模資!\n");
+
+	delete Gameover_Icon;
+	Gameover_Icon = NULL;
+	//printf("Gameover_Icon 模資!\n");
+
+	for (int i = 0; i < 2; i++)
+	{
+		delete ReStart_Icon[i];
+		ReStart_Icon[i] = NULL;
+
+		delete MainScene_Icon[i];
+		MainScene_Icon[i] = NULL;
+	}
+	//printf("Re,Main_Icon 模資!\n");
 
 	for (int i = 0; i < MAX_ENEMY; i++)
 	{
 		if (enemy[i] != NULL)
+		{
 			delete enemy[i];
+			enemy[i] = NULL;
+		}
 	}
+	//printf("enemy 模資!\n");
 
 	printf("gamescene 贗楚蝶 模資!\n");
+	//system("pause");
 }
 
 void GameScene::Loop()
@@ -115,7 +163,8 @@ void GameScene::Loop()
 	}
 	else if (select == PAUSE)
 	{
-		
+		if (Alpha < 100)
+			Alpha += 1;
 	}
 }
 
@@ -129,6 +178,7 @@ void GameScene::DrawImage()
 	this->Draw_TransparentBlt(player->HPbar, 255, 255, 255);
 
 	this->Draw_TransparentBlt(player->playerImage[player->Image_toggle], 255, 255, 255);
+	//this->Draw_AlphaBlend(player->playerImage[player->Image_toggle], AC_SRC_OVER, 130);
 
 	for (int i = 0; i < enemyCount; i++)
 	{
@@ -143,7 +193,10 @@ void GameScene::DrawImage()
 
 	if (select == PAUSE)
 	{
-
+		this->Draw_AlphaBlend(gameover_ground, 100 + Alpha);
+		this->Draw_TransparentBlt(Gameover_Icon, 0, 0, 0);
+		this->Draw_TransparentBlt(ReStart_Icon[0], 0, 0, 0);
+		this->Draw_TransparentBlt(MainScene_Icon[0], 0, 0, 0);
 	}
 
 	this->Draw();

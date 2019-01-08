@@ -22,8 +22,8 @@ void Layer::Init()
 	hdc = GetDC(hWnd);
 	MemDC = CreateCompatibleDC(hdc);
 	BackDC = CreateCompatibleDC(hdc);
-	b_BackImage = CreateCompatibleBitmap(hdc, Drawmap_WIDTH, Drawmap_HEIGHT);
 
+	b_BackImage = CreateCompatibleBitmap(hdc, Drawmap_WIDTH, Drawmap_HEIGHT);
 	b_hPreBit = (HBITMAP)SelectObject(MemDC, b_BackImage);
 }
 
@@ -34,8 +34,6 @@ void Layer::DeleteImage()
 	DeleteObject(BackDC);
 	DeleteObject(b_BackImage);
 	DeleteDC(MemDC);
-
-	DeleteObject(b_Image);
 
 	ReleaseDC(hWnd, hdc);
 
@@ -69,7 +67,24 @@ void Layer::Draw_TransparentBlt(gBitmap* bitmap, int r, int g, int b)
 {
 	SelectObject(BackDC, bitmap->Getbitmap());
 
+	//BitBlt(AlphaDC, 0, 0, Drawmap_WIDTH, Drawmap_HEIGHT, BackDC, 0, 0, SRCCOPY);
+
+	//TransparentBlt(AlphaDC, 0, 0, Drawmap_WIDTH, Drawmap_HEIGHT, BackDC, 0, 0, 0, 0, RGB(r, g, b));
 	TransparentBlt(MemDC, bitmap->get_X(), bitmap->get_Y(), bitmap->get_W(), bitmap->get_H(), BackDC, 0, 0, bitmap->GetWidth(), bitmap->GetHeight(), RGB(r, g, b));
+	//AlphaBlend(MemDC, bitmap->get_X(), bitmap->get_Y(), bitmap->get_W(), bitmap->get_H(), BackDC, 0, 0, bitmap->GetWidth(), bitmap->GetHeight(), m_BlendFunction);
+	//SelectObject(AlphaDC, BackDC);
+}
+
+void Layer::Draw_AlphaBlend(gBitmap * bitmap, BYTE SourceConstantAlpha, BYTE BlendOp, BYTE BlendFlags, BYTE AlphaFormat)
+{
+	m_BlendFunction.BlendOp = BlendOp;
+	m_BlendFunction.BlendFlags = BlendFlags;
+	m_BlendFunction.SourceConstantAlpha = SourceConstantAlpha;
+	m_BlendFunction.AlphaFormat = AlphaFormat;
+
+	SelectObject(BackDC, bitmap->Getbitmap());
+
+	AlphaBlend(MemDC, bitmap->get_X(), bitmap->get_Y(), bitmap->get_W(), bitmap->get_H(), BackDC, 0, 0, bitmap->GetWidth(), bitmap->GetHeight(), m_BlendFunction);
 }
 
 void Layer::Draw_PNGImage(PNG_Image* image)

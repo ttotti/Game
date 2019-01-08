@@ -17,9 +17,10 @@ private:
 	HWND hWnd;
 	HINSTANCE g_hInst;
 
-	HBITMAP b_Image;
 	HBITMAP b_BackImage;
 	HBITMAP b_hPreBit;
+
+	BLENDFUNCTION m_BlendFunction;
 
 public:
 	Layer();
@@ -34,6 +35,7 @@ public:
 	void Draw_BitBlt(gBitmap* bitmap);
 	void Draw_StretchBit(gBitmap* bitmap);
 	void Draw_TransparentBlt(gBitmap* bitmap, int r, int g, int b);
+	void Draw_AlphaBlend(gBitmap* bitmap, BYTE SourceConstantAlpha, BYTE BlendOp = AC_SRC_OVER, BYTE BlendFlags = 0, BYTE AlphaFormat = 0);
 
 	void Draw_PNGImage(PNG_Image* image);
 

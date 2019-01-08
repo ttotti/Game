@@ -7,6 +7,7 @@
 class GameLoop
 {
 public:
+	//std::unique_ptr<MainScene> mainscene;
 	MainScene* mainscene;
 	GameScene* gamescene;
 

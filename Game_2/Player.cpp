@@ -57,14 +57,14 @@ void Player::setKeydown()
 
 	// GetKeyState() - 현재 키의 토글 상태를 알 수 있다
 	// GetAsyncKeyState() - 현재 키의 눌림을 알 수 있다
-	if (GetAsyncKeyState(VK_LEFT))
+	if (GetAsyncKeyState(LEFT))
 	{
 		moving_x += speed;
 		rect.left -= speed;
 		Image_toggle = 1;
 	}
 
-	if (GetAsyncKeyState(VK_RIGHT))
+	if (GetAsyncKeyState(RIGHT))
 	{
 		moving_x -= speed;
 		rect.left += speed;
@@ -73,14 +73,14 @@ void Player::setKeydown()
 		//printf("field = %f\n", field_x);
 	}
 
-	if (GetAsyncKeyState(VK_UP))
+	if (GetAsyncKeyState(UP))
 	{
 		moving_y += speed;
 		rect.top -= speed;
 		//printf("UP 입력!\n");
 	}
 
-	if (GetAsyncKeyState(VK_DOWN))
+	if (GetAsyncKeyState(DOWN))
 	{
 		moving_y -= speed;
 		rect.top += speed;

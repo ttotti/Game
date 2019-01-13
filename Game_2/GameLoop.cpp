@@ -33,7 +33,6 @@ void GameLoop::Loop()
 			mainscene = new MainScene(g_hInst, hWnd);
 		}
 
-		mainscene->setMouse(M_x, M_y, C_x, C_y);
 		mainscene->DrawImage();
 
 		if (mainscene->ClickMouse)
@@ -71,6 +70,22 @@ void GameLoop::Loop()
 
 		gamescene->Loop();
 		gamescene->DrawImage();
+
+		if (gamescene->ClickMouse)
+		{
+			if (gamescene->select == 1)
+			{
+				delete gamescene;
+				gamescene = NULL;
+			}
+			else if (gamescene->select == 2)
+			{
+				delete gamescene;
+				gamescene = NULL;
+
+				selectMenu = MAINSCENE;
+			}
+		}
 
 		break;
 

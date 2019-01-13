@@ -69,33 +69,29 @@ void CALLBACK TimeProc(HWND hWnd, UINT uMsg, UINT idEvent, DWORD dwTime)
 // 사용자와 시스템이 보내오는 메시지를 처리하는 아주 중요한 일을 한다
 LRESULT CALLBACK WndProc(HWND hWnd, UINT iMessage, WPARAM wParam, LPARAM lParam)
 {
-	HDC hdc;
-	HWND hWndMain;
-
 	switch (iMessage)
 	{
 	case WM_CREATE:
-		hWndMain = hWnd;
 		SetTimer(hWnd, 1, 10, TimeProc);
-
 		gameloop.init(g_hInst, hWnd);
+
 		return 0;
 
-	case WM_MOUSEMOVE:
-		gameloop.M_x = LOWORD(lParam);
-		gameloop.M_y = HIWORD(lParam);
-		printf("x = %d, y = %d\n", LOWORD(lParam), HIWORD(lParam));
-		return 0;
+	//case WM_MOUSEMOVE:
+	//	gameloop.M_x = LOWORD(lParam);
+	//	gameloop.M_y = HIWORD(lParam);
+	//	//printf("x = %d, y = %d\n", LOWORD(lParam), HIWORD(lParam));
+	//	return 0;
 
-	case WM_LBUTTONDOWN:
-		gameloop.C_x = LOWORD(lParam);
-		gameloop.C_y = HIWORD(lParam);
-		return 0;
+	//case WM_LBUTTONDOWN:
+	//	gameloop.C_x = LOWORD(lParam);
+	//	gameloop.C_y = HIWORD(lParam);
+	//	return 0;
 
-	case WM_LBUTTONUP:
-		gameloop.C_x = 0;
-		gameloop.C_y = 0;
-		return 0;
+	//case WM_LBUTTONUP:
+	//	gameloop.C_x = 0;
+	//	gameloop.C_y = 0;
+	//	return 0;
 
 	case WM_DESTROY:
 		KillTimer(hWnd, 1);

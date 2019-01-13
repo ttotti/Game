@@ -1,7 +1,6 @@
 #pragma once
 
 #include <Windows.h>
-#include "Layer.h"
 #include <stdio.h>
 #include "Character.h"
 

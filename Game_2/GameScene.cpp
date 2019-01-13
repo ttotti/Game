@@ -5,7 +5,7 @@ GameScene::GameScene()
 }
 
 GameScene::GameScene(HINSTANCE g_hInst, HWND hWnd)
-	:Layer(g_hInst, hWnd), hWnd(hWnd), g_hInst(g_hInst), enemyCount(0), Alpha(0)
+	:Layer(g_hInst, hWnd), hWnd(hWnd), g_hInst(g_hInst), enemyCount(0), Alpha(0), ClickMouse(false)
 {
 	background = new gBitmap;
 	background->SetBitmap(hWnd, g_hInst, IDB_background);
@@ -92,6 +92,11 @@ GameScene::~GameScene()
 
 void GameScene::Loop()
 {
+	GetCursorPos(&pt);
+	ScreenToClient(hWnd, &pt);
+
+	printf("x = %d, y = %d\n", pt.x, pt.y);
+
 	if (select == GAMESTART)
 	{
 		player->setKeydown();
@@ -178,7 +183,6 @@ void GameScene::DrawImage()
 	this->Draw_TransparentBlt(player->HPbar, 255, 255, 255);
 
 	this->Draw_TransparentBlt(player->playerImage[player->Image_toggle], 255, 255, 255);
-	//this->Draw_AlphaBlend(player->playerImage[player->Image_toggle], AC_SRC_OVER, 130);
 
 	for (int i = 0; i < enemyCount; i++)
 	{
@@ -194,9 +198,43 @@ void GameScene::DrawImage()
 	if (select == PAUSE)
 	{
 		this->Draw_AlphaBlend(gameover_ground, 100 + Alpha);
-		this->Draw_TransparentBlt(Gameover_Icon, 0, 0, 0);
-		this->Draw_TransparentBlt(ReStart_Icon[0], 0, 0, 0);
-		this->Draw_TransparentBlt(MainScene_Icon[0], 0, 0, 0);
+
+		if (Alpha == 100)
+		{
+			this->Draw_TransparentBlt(Gameover_Icon, 0, 0, 0);
+
+			if (pt.x >= ReStart_Icon[0]->get_X() && pt.x <= (ReStart_Icon[0]->get_X() + ReStart_Icon[0]->GetWidth()) && pt.y >= ReStart_Icon[0]->get_Y() && pt.y <= (ReStart_Icon[0]->get_Y() + ReStart_Icon[0]->GetHeight()))
+			{
+				this->Draw_TransparentBlt(ReStart_Icon[1], 0, 0, 0);
+
+				if (GetAsyncKeyState(VK_LBUTTON) & 0x8000)
+				{
+					ClickMouse = true;
+					select = RESTART;
+					printf("Start 클릭!\n");
+				}
+			}
+			else
+			{
+				this->Draw_TransparentBlt(ReStart_Icon[0], 0, 0, 0);
+			}
+
+			if (pt.x >= MainScene_Icon[0]->get_X() && pt.x <= (MainScene_Icon[0]->get_X() + MainScene_Icon[0]->GetWidth()) && pt.y >= MainScene_Icon[0]->get_Y() && pt.y <= (MainScene_Icon[0]->get_Y() + MainScene_Icon[0]->GetHeight()))
+			{
+				this->Draw_TransparentBlt(MainScene_Icon[1], 0, 0, 0);
+
+				if (GetAsyncKeyState(VK_LBUTTON) & 0x8000)
+				{
+					ClickMouse = true;
+					select = MAINSCENE;
+					printf("Start 클릭!\n");
+				}
+			}
+			else
+			{
+				this->Draw_TransparentBlt(MainScene_Icon[0], 0, 0, 0);
+			}
+		}
 	}
 
 	this->Draw();

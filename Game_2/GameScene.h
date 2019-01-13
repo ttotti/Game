@@ -11,10 +11,10 @@
 class GameScene : public Layer
 {
 private:
-	enum SELECT { GAMESTART, RESTART, MAINSCENE, PAUSE };
-
 	HWND hWnd;
 	HINSTANCE g_hInst;
+
+	POINT pt;
 
 	Player* player;
 	Enemy* enemy[MAX_ENEMY];
@@ -29,9 +29,13 @@ private:
 	gBitmap* MainScene_Icon[2];
 
 public:
-	SELECT select;
+	enum SELECT { GAMESTART, RESTART, MAINSCENE, PAUSE };
+
+	int select;
 	int enemyCount;
 	int Alpha;
+
+	bool ClickMouse;
 
 public:
 	GameScene();
